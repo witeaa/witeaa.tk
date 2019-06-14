@@ -1,0 +1,1290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+  <channel>
+    <title>WIT电子爱好者协会</title>
+    <link>https://witeaa.cn</link>
+    <description>很高兴能在这里与你分享对技术的思考</description>
+    
+      <item>
+        <title>我能做一辆循迹小车吗</title>
+        <link>https://witeaa.cn/2019/03/17/%E6%99%BA%E8%83%BD%E5%BE%AA%E8%BF%B9%E5%B0%8F%E8%BD%A6.html</link>
+        <guid isPermaLink="true">https://witeaa.cn/2019/03/17/%E6%99%BA%E8%83%BD%E5%BE%AA%E8%BF%B9%E5%B0%8F%E8%BD%A6.html</guid>
+        <pubDate>Sun, 17 Mar 2019 00:00:00 +0000</pubDate>
+        <description>&lt;h1 id=&quot;part-81fbe777da52af82&quot;&gt;智能循迹小车&lt;/h1&gt;
+
+&lt;h3 id=&quot;part-956f3f59d2bbfef3&quot;&gt;一、什么是智能循迹小车&lt;/h3&gt;
+
+&lt;h5 id=&quot;part-d2c5e00da7286d0a&quot;&gt;使用某种微控制器作为核心&lt;em&gt;控制模块&lt;/em&gt;，通过增加道路&lt;em&gt;传感器&lt;/em&gt;、&lt;em&gt;电机驱动模块&lt;/em&gt;以及编写相应的&lt;em&gt;控制程序&lt;/em&gt;，制作的一个能够自主识别道路的模型汽车。&lt;/h5&gt;
+
+&lt;div align=&quot;center&quot;&gt;&lt;video src=&quot;https://video-1252834524.cos.ap-shanghai.myqcloud.com/VID_20190315_180331.mp4.f20.mp4&quot; controls=&quot;controls&quot; width=85%&gt;&lt;/video&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;part-ce60919a07143e2a&quot;&gt;二、我能做一辆循迹小车吗&lt;/h3&gt;
+
+&lt;h5 id=&quot;80-80&quot;&gt;当然可以了，只要你有兴趣你有决心，宏电杯来了，我们会给你提供一个展示自己的舞台，快来报名吧！（再不奋斗就老了，此处的“老”是指你已经跟不上科技的脚步了，以前的时代能在课堂上学习到一生中大约80%的知识，但现在却不同了这80%的知识需要你在课外去汲取，并且一生中要不断地学习）&lt;/h5&gt;
+
+&lt;h3 id=&quot;part-5dd4bc396a6adfc9&quot;&gt;三、 智能循迹车的结构&lt;/h3&gt;
+
+&lt;h4 id=&quot;1&quot;&gt;1、控制模块&lt;/h4&gt;
+
+&lt;h5 id=&quot;mcu-51-arduino-uno-stm32&quot;&gt;主控（MCU）有很多种，包括：51单片机；arduino uno；STM32......&lt;/h5&gt;
+
+&lt;h5 id=&quot;part-bbfc2cc184f321be&quot;&gt;这里只给出了这三款单片机（最常用）它们的特点如下：&lt;/h5&gt;
+
+&lt;table&gt;&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&quot;text-align: center&quot;&gt;方案&lt;/th&gt;
+&lt;th style=&quot;text-align: center&quot;&gt;特点&lt;/th&gt;
+&lt;th style=&quot;text-align: center&quot;&gt;推荐指数（5颗星）&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;51单片机&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;课堂上学过，我们熟悉，较简单，速度慢，片上资源少&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;2星&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;arduino&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;编程简单，库多，容易上手，个把星期就可以入门，性能一般&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;3星&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;STM32&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;网上资料多，性能强悍，速度快，但学习的周期长，不适合初学者&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;3颗（用过32滴5星推荐）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+
+&lt;h4 id=&quot;2&quot;&gt;2、传感器&lt;/h4&gt;
+
+&lt;h5 id=&quot;part-925323bd78ed6242&quot;&gt;智能车的传感器有很多，有电磁的，有光电的（摄像头的）......这都不是我们这次要讲的传感器，我们这次比赛将要用到的传感器是   &amp;lt;红外对管&amp;gt;&lt;/h5&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://witeaa-1252834524.cos.ap-chengdu.myqcloud.com/images/%E5%89%8D%E7%9E%BB.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://witeaa-1252834524.cos.ap-chengdu.myqcloud.com/images/%E7%BA%A2%E5%A4%96%E5%AF%B9%E7%AE%A1.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;循迹模块我用的是&lt;a href=&quot;https://www.baidu.com/s?wd=%E7%BA%A2%E5%A4%96%E4%BC%A0%E6%84%9F%E5%99%A8&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao&quot;&gt;红外传感器&lt;/a&gt;。黑线的检测原理是&lt;a href=&quot;https://www.baidu.com/s?wd=%E7%BA%A2%E5%A4%96%E5%8F%91%E5%B0%84%E7%AE%A1&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao&quot;&gt;红外发射管&lt;/a&gt;发射光线到路面，红外光遇到白底则被反射，接收管接收到反射光，经施密特触发器整形后输出低电平；当红外光遇到黑线时则被吸收，接收管没有接收到反射光，经施密特触发器整形后输出高电平。再由电压比较器比较前后电压后，单片机读到后做出左右转向的动作。&lt;/p&gt;
+
+&lt;h5 id=&quot;lm339&quot;&gt;（此处推荐百度这个工具）到百度上搜索：红外对管循迹 / 红外对管与LM339 或者 问淘宝客服要模块资料&lt;/h5&gt;
+
+&lt;table&gt;&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&quot;text-align: center&quot;&gt;方案&lt;/th&gt;
+&lt;th style=&quot;text-align: center&quot;&gt;价格&lt;/th&gt;
+&lt;th style=&quot;text-align: center&quot;&gt;推荐指数&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;淘宝上有红外对管的模块&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;单个价格2元左右*5&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;3颗星&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;用红外对管（不是模块）和电压比较芯片LM339自己焊接电路，这个还需要一块洞洞板&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;便宜不少，淘宝自行比较（也能学透这个原理）&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;5颗星&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+
+&lt;h4 id=&quot;3&quot;&gt;3、电机驱动&lt;/h4&gt;
+
+&lt;h5 id=&quot;part-40e849419f1c095c&quot;&gt;首先我们为什么需要电机驱动呢？&lt;/h5&gt;
+
+&lt;h5 id=&quot;pwm&quot;&gt;一方面，通过对驱动电路输入PWM波形实现对占空比的控制，最终实现对电机运转角度或速度的控制。不然，直接接个直流电源，电流就是固定的，转速就是固定的。另一方面，通过电机驱动可以控制通入电机的电流方向，从而改变电机的转动方向。&lt;/h5&gt;
+
+&lt;table&gt;&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&quot;text-align: center&quot;&gt;方案&lt;/th&gt;
+&lt;th style=&quot;text-align: center&quot;&gt;价格&lt;/th&gt;
+&lt;th style=&quot;text-align: center&quot;&gt;推荐指数&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;TB6612电机驱动芯片&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;某宝 5~10元&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;5颗星&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;L298N电机驱动&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;某宝 5~10元（发热严重，控制不稳）&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;3颗星&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;http://www.360doc.com/content/15/0715/01/12109864_484969939.shtml&quot;&gt;MOS搭建的H桥&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;6元（可以学到很多）&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;5颗星&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+
+&lt;h4 id=&quot;4&quot;&gt;4、电源&lt;/h4&gt;
+
+&lt;p&gt;电源是智能车的心脏，是智能车驱动力的保障，好的电源可以给智能车提供可靠、稳定的供电，保障智能车的正常工作。&lt;/p&gt;
+
+&lt;h5 id=&quot;7-4v-5v-6v&quot;&gt;稳压模块在淘宝上特别多，价格便宜，主要是将电池的7.4V电压稳压成5V（给单片机提供电压）或6V（给电机和舵机提供电压）&lt;/h5&gt;
+
+&lt;table&gt;&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&quot;text-align: center&quot;&gt;方案&lt;/th&gt;
+&lt;th style=&quot;text-align: center&quot;&gt;价格&lt;/th&gt;
+&lt;th style=&quot;text-align: center&quot;&gt;推荐指数&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;网上的降压模块&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;3元左右&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;5颗星&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;稳压芯片（为单片机供电电流小）&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;AMS1117-5V&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;4颗星&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+
+&lt;p&gt;具体AMS1117芯片怎么用请百度，因为我们也是在网上学来的，自觉没有网上讲的详细，见谅&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;一般电源可以分为两类：DCDC开关电源和LDO低压差线性稳压器。DCDC电源具有电流大、电压范围宽、效率高等特点，但输出电压波动较大，适合大电流、大功率供电场合。LDO电源可为负载提供纯净的，电压波动很小的供电，但输出电流较小（一般不超过1A），效率低，适用于需要提供稳定电流的的负载，比如主控芯片。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;5&quot;&gt;5、车模&lt;/h4&gt;
+
+&lt;p&gt;车模（不是模特。。），包括车体结构、转向机构、电机等等，是智能车的骨架。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://witeaa-1252834524.cos.ap-chengdu.myqcloud.com/images/%E6%95%B4%E8%BD%A6.jpg&quot; alt=&quot;整车实拍&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://witeaa-1252834524.cos.ap-chengdu.myqcloud.com/images/%E6%82%AC%E6%8C%82%E7%BB%93%E6%9E%84.jpg&quot; alt=&quot;部分细节&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://witeaa-1252834524.cos.ap-chengdu.myqcloud.com/images/%E8%BD%A6%E5%BA%95%E6%9D%BF.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://witeaa-1252834524.cos.ap-chengdu.myqcloud.com/images/%E4%B9%B0%E5%88%B0%E7%9A%84%E8%BD%A6%E6%A8%A1.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;part-ab37a9657298fef&quot;&gt;四、学习资料&lt;/h3&gt;
+
+&lt;p&gt;光靠这篇文章是无法让你做出一个完整的智能车的，我们搜集整理了一些资料放在了百度网盘里供大家参考学习&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://pan.baidu.com/s/1c4pWcxJ1fxdgVrPb0sW2vA&quot;&gt;百度网盘资料&lt;/a&gt;  提取密码：m7xa&lt;/p&gt;
+
+&lt;h3 id=&quot;part-63157f126faeee45&quot;&gt;五、采购清单&lt;/h3&gt;
+
+&lt;table&gt;&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&quot;text-align: center&quot;&gt;类目&lt;/th&gt;
+&lt;th style=&quot;text-align: center&quot;&gt;价格（元）&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://item.taobao.com/item.htm?spm=a230r.1.14.267.123710e7ewVCL9&amp;id=521902136372&amp;ns=1&amp;abbucket=10#detail&quot;&gt;车体结构（带电机和舵机）&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;76&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://detail.tmall.com/item.htm?spm=a230r.1.14.13.342c84c4eQ3wVF&amp;id=557384797301&amp;cm_id=140105335569ed55e27b&amp;abbucket=10&quot;&gt;主控（stc15/stc51最小系统）&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;30&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://detail.tmall.com/item.htm?spm=a230r.1.14.6.157f2ca3LFFry2&amp;id=536926412069&amp;cm_id=140105335569ed55e27b&amp;abbucket=10&quot;&gt;驱动（TB6612）&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;10&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;前瞻（对管）&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;10左右&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://item.taobao.com/item.htm?spm=a230r.1.14.59.cca957b8aDHy6D&amp;id=561469537882&amp;ns=1&amp;abbucket=10#detail&quot;&gt;航模电池&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;39&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://detail.tmall.com/item.htm?spm=a230r.1.14.13.9cbf5694ljmgAp&amp;id=41345069371&amp;cm_id=140105335569ed55e27b&amp;abbucket=10&quot;&gt;稳压模块（2块）&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;10&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;洞洞板、杜邦线/接头&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;20&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;总价&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;195&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+</description>
+      </item>
+    
+      <item>
+        <title>电子爱好者协会小制作竟赛</title>
+        <link>https://witeaa.cn/2018/12/04/%E7%94%B5%E5%AD%90%E7%88%B1%E5%A5%BD%E8%80%85%E5%8D%8F%E4%BC%9A%E5%B0%8F%E5%88%B6%E4%BD%9C%E7%AB%9F%E8%B5%9B.html</link>
+        <guid isPermaLink="true">https://witeaa.cn/2018/12/04/%E7%94%B5%E5%AD%90%E7%88%B1%E5%A5%BD%E8%80%85%E5%8D%8F%E4%BC%9A%E5%B0%8F%E5%88%B6%E4%BD%9C%E7%AB%9F%E8%B5%9B.html</guid>
+        <pubDate>Tue, 04 Dec 2018 00:00:00 +0000</pubDate>
+        <description>&lt;h1 id=&quot;part-5a0a28fd7816036e&quot;&gt;第一届电子爱好者协会小制作竟赛&lt;/h1&gt;
+
+&lt;p&gt;为提升本会会员科技创新能力，电子设计制作的水平和解决实际问题的能力，同时为协会今后的其它竞赛选拔优秀人才，经研究决定举办电子爱好者协会第一届小制作竞赛。&lt;/p&gt;
+
+&lt;h2 id=&quot;part-2e9fc76fcd059855&quot;&gt;赛事组织&lt;/h2&gt;
+
+&lt;p&gt;主办单位：武汉工程大学电子爱好者协会&lt;/p&gt;
+
+&lt;h2 id=&quot;part-7b30c77edf9869f4&quot;&gt;竞赛内容和要求&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;以电子单元电路（含模拟和数字电路）应用设计为内容，可以涉及模－数混合电路、单片机、传感器、EDA技术、可编程控制器及软件工具和PC机(主要用于开发)的应用。设计作品包括“理论设计”和“实际制作与调试”两部分。&lt;/li&gt;
+&lt;li&gt;参赛作品可以是具有实用价值、观赏价值、或用于娱乐。作品着重考核会员单片机及c语言基础知识，考核会员的创新精神、独立思考和团队合作的能力。&lt;/li&gt;
+&lt;li&gt;参赛作品可以加入具有游戏性质的元素，使作品具有娱乐性质。
+## 竞赛规则&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;part-2db6519a720995f2&quot;&gt;竞赛方式&lt;/h3&gt;
+
+&lt;p&gt;采取全开放的方式，即在规定时间内不限地点完成电子设计作品。竞赛期间可以查阅有关文献资料，队内集体商讨设计思想，确定设计方案，分工负责、团结协作。以参赛队为基本单位独立完成竞赛任务，竞赛期间不允许其他队外人员进行任何形式的指导或引导，竞赛期间参赛队员不得与队外任何人员讨论商量。为保证竞赛工作顺利进行，竞赛所需小型元器件由电子爱好者协会负责提供（主控部分只提供stc89c52系列单片机，其它型号单片机及其它实验室现有元件无法提供的需自行购买）。参赛者必须在规定时间内完成设计，准时上交参赛作品，未按时上交者作自动放弃处理。本次电子设计竞赛强调参赛者自主设计，独立完成。&lt;/p&gt;
+
+&lt;h3 id=&quot;part-2bb2392d08466fda&quot;&gt;参赛对象&lt;/h3&gt;
+
+&lt;p&gt;武汉工程大学电子爱好者协会注册的正式会员&lt;/p&gt;
+
+&lt;h3 id=&quot;part-5cc4ec86da461db&quot;&gt;参赛队要求&lt;/h3&gt;
+
+&lt;p&gt;参赛学生不限任何条件自由组合，每队1-3人。&lt;/p&gt;
+
+&lt;h1 id=&quot;part-eb95b959ef3f3048&quot;&gt;更多详细内容请下载附件查看&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://bucket1-1252834524.picgz.myqcloud.com/upload/131884069493803757.docx&quot;&gt;比赛详情&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://bucket1-1252834524.picgz.myqcloud.com/upload/131884070567993208.docx&quot;&gt;报名表&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+      </item>
+    
+      <item>
+        <title>告别DEVcpp 使用VScode+TDM-GCC搭建C&C++开发环境</title>
+        <link>https://witeaa.cn/2018/10/05/%E4%BD%BF%E7%94%A8VScode+TDM-GCC%E6%90%AD%E5%BB%BAC&C++%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83.html</link>
+        <guid isPermaLink="true">https://witeaa.cn/2018/10/05/%E4%BD%BF%E7%94%A8VScode+TDM-GCC%E6%90%AD%E5%BB%BAC&C++%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83.html</guid>
+        <pubDate>Fri, 05 Oct 2018 00:00:00 +0000</pubDate>
+        <description>&lt;p&gt;使用VScode进行C语言编程练习比DevCpp、VC6.0这一类过时的东西好用多了，唯一的缺憾就是vscode没有编译功能，通过配置扩展和安装编译环境可以让vscode很方便的编译运行代码。&lt;/p&gt;
+
+&lt;h2 id=&quot;part-d9d3826bc78b17b7&quot;&gt;首先下载好所需的所有文件&lt;/h2&gt;
+
+&lt;p&gt;到官网下载vscode和TDM&lt;br&gt;
+&lt;a href=&quot;https://code.visualstudio.com/download&quot;&gt;vscode&lt;/a&gt;&lt;br&gt;
+&lt;a href=&quot;https://sourceforge.net/projects/tdm-gcc/&quot;&gt;TDM&lt;/a&gt;&lt;br&gt;
+如果无法从官网下载安装包，可以在下面的百度网盘地址下载&lt;br&gt;
+&lt;a href=&quot;https://pan.baidu.com/s/1FmyDh1RMNg0Xme70YL7OIw&quot;&gt;百度网盘&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;VScode安装没什么好说的，主要演示TDM的安装&lt;/p&gt;
+
+&lt;p&gt;选择create&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2018/10/05/5bb708ad4680b.png&quot; alt=&quot;5bb708ad4680b&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2018/10/05/5bb708dfb3198.png&quot; alt=&quot;5bb708dfb3198&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;安装目录建议放在C盘的默认安装位置下&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2018/10/05/5bb70934e828a.png&quot; alt=&quot;5bb70934e828a&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;保持默认点击安装&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2018/10/05/5bb709686571f.png&quot; alt=&quot;5bb709686571f&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;安装完成后，在开始按钮右键打开Windows power shell，输入gcc -v 如果出现以下类似的信息，说明安装成功，如果提示没有找到命令，说明没有安装好&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2018/10/05/5bb70a430d78d.png&quot; alt=&quot;5bb70a430d78d&quot;&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;vscode&quot;&gt;配置VScode&lt;/h2&gt;
+
+&lt;h3 id=&quot;part-38c76b54f590ec4a&quot;&gt;首先需要安装几个插件&lt;/h3&gt;
+
+&lt;p&gt;打开vscode，进入插件安装面板&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2018/10/05/5bb70ac1e2d00.png&quot; alt=&quot;5bb70ac1e2d00&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;搜索下图中框住的插件并安装，这些插件可以提高写代码的效率&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2018/10/05/5bb70bfce17c1.png&quot; alt=&quot;5bb70bfce17c1&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;将百度网盘中下载的压缩文件解压出来，将 .vscode 文件夹复制到你要编写代码的文件夹里&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2018/10/05/5bb70fdda345e.png&quot; alt=&quot;5bb70fdda345e&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;比如新建了一个名为test的文件夹，我将在这个文件夹下编写代码&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2018/10/05/5bb7108b214f3.png&quot; alt=&quot;5bb7108b214f3&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;在此文件夹下右键，用vscode打开&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2018/10/05/5bb710f229d1b.png&quot; alt=&quot;5bb710f229d1b&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;我新建了一个文件 main.cpp 并添加了测试代码&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2018/10/05/5bb71354875ab.png&quot; alt=&quot;5bb71354875ab&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;进入调试面板点击调试或者按F5&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2018/10/05/5bb713b3ab2d8.png&quot; alt=&quot;5bb713b3ab2d8&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2018/10/05/5bb713f59e534.png&quot; alt=&quot;5bb713f59e534&quot;&gt;&lt;/p&gt;
+</description>
+      </item>
+    
+      <item>
+        <title>如何用单片机写一个可以滚动显示的数码管</title>
+        <link>https://witeaa.cn/2018/09/25/%E5%A6%82%E4%BD%95%E7%94%A8%E5%8D%95%E7%89%87%E6%9C%BA%E5%86%99%E4%B8%80%E4%B8%AA%E5%8F%AF%E4%BB%A5%E6%BB%9A%E5%8A%A8%E6%98%BE%E7%A4%BA%E7%9A%84%E6%95%B0%E7%A0%81%E7%AE%A1.html</link>
+        <guid isPermaLink="true">https://witeaa.cn/2018/09/25/%E5%A6%82%E4%BD%95%E7%94%A8%E5%8D%95%E7%89%87%E6%9C%BA%E5%86%99%E4%B8%80%E4%B8%AA%E5%8F%AF%E4%BB%A5%E6%BB%9A%E5%8A%A8%E6%98%BE%E7%A4%BA%E7%9A%84%E6%95%B0%E7%A0%81%E7%AE%A1.html</guid>
+        <pubDate>Tue, 25 Sep 2018 00:00:00 +0000</pubDate>
+        <description>&lt;p&gt;要想让数码管显示更多的内容，一种方式是增加数码管的个数，但这样会带来成本的增加和体积的增大；另一种可行的方案是让数码管滚动显示，写一个滚动显示的数码管并不复杂，下面将使用stc89c52rc单片机和开发板配套的8位数码管写一个可以让数码管滚动显示的代码。&lt;/p&gt;
+
+&lt;h2 id=&quot;part-2d823213527d80ec&quot;&gt;硬件连接&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2018/09/25/5baa1ed6a3eb3.png&quot; alt=&quot;5baa1ed6a3eb3&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;如图，这是八个八段共阴数码管，意味着高电平点亮，数码管的段显通过74HC573连接到单片机P1口&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;74HC573是一个锁存器，当LE处于高电平的时候，输入和输出的信号是同步的，用在数码管主要用来增大驱动能力。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2018/09/25/5baa230327c96.png&quot; alt=&quot;5baa230327c96&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;数码管的位显通过138译码器连接到单片机的P0口&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;138译码器通过3位的输入控制8位输出&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;part-2bf3829ba6d4280c&quot;&gt;代码编写&lt;/h2&gt;
+
+&lt;h3 id=&quot;part-f2ec3b98a5f0adfa&quot;&gt;首先让数码管可以动态刷新显示&lt;/h3&gt;
+
+&lt;p&gt;只要让对应段显点亮就可以了&lt;/p&gt;
+
+&lt;p&gt;下面是通过数码管的数据手册写出来的真值表，为了方便后面的显示，这里使用宏定义的方式定义真值表。&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c_cpp&quot; data-lang=&quot;c_cpp&quot;&gt;#define MAXWEI 8 //这里定义的是数码管的个数
+
+
+#define E0 0x3f
+#define E1 0x06
+#define E2 0x5b
+#define E3 0x4f
+#define E4 0x66
+#define E5 0x6d
+#define E6 0x7d
+#define E7 0x07
+#define E8 0x7f
+#define E9 0x6f
+#define EE 0x00 //什么都不显示
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;定义一个数组用于存放要显示的数字&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;kt&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;E0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;E1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;E2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;E3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;E4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;E5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;E6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;E7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;E8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;E9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;EE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;EE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;EE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;EE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;EE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;EE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;EE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;EE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;EE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;EE&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;在main函数里面刷新显示&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;
+&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MAXWEI&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+            &lt;span class=&quot;n&quot;&gt;P0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;P1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;实际显示效果并不好&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2018/09/25/5baa29c28906d.png&quot; alt=&quot;5baa29c28906d&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;这是因为显示刷新太快，数码管有残影导致的，为了解决这个问题，可以通过添加延时函数解决&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Delay1ms&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;        &lt;span class=&quot;c1&quot;&gt;//@11.0592MHz&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;_nop_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;190&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;delay&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ms&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ms&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;ms&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;Delay1ms&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;在主函数显示部分添加延时函数&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MAXWEI&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;delay&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;P0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;P1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;显示效果有明显改进&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2018/09/25/5baa2b5a435e5.png&quot; alt=&quot;5baa2b5a435e5&quot;&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;part-2212c02b0d7ebde2&quot;&gt;接下来添加一些代码可以让它滚动显示&lt;/h3&gt;
+
+&lt;p&gt;为了让代码滚动显示，只要在每次刷新完一次将显示的起使位置向后移一位，并在达到最后一个数码管后重新将显示起使位置切换到第一个。&lt;/p&gt;
+
+&lt;p&gt;开启一个定时器，在中断函数中将标志位后移。定时器最大只能开启50ms中断，所以添加标志位延长时间。&lt;/p&gt;
+
+&lt;p&gt;添加两个标志位，一个用于后移显示，另一个用于时间标志位&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;kt&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//后移显示&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//时间标志&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;定时器初始化&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Timer0Init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;        &lt;span class=&quot;c1&quot;&gt;//500微秒@11.0592MHz&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;AUXR&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;=&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;0x7F&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;        &lt;span class=&quot;c1&quot;&gt;//定时器时钟12T模式&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;TMOD&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;=&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;0xF0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;        &lt;span class=&quot;c1&quot;&gt;//设置定时器模式&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;TL0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;0x00&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;        &lt;span class=&quot;c1&quot;&gt;//设置定时初值&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;TH0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;0x4C&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;        &lt;span class=&quot;c1&quot;&gt;//设置定时初值&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;TF0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;        &lt;span class=&quot;c1&quot;&gt;//清除TF0标志&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;TR0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;        &lt;span class=&quot;c1&quot;&gt;//定时器0开始计时&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;ET0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;定时器中断函数&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tm0_isr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;interrupt&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; 
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;TL0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;0x00&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;     &lt;span class=&quot;c1&quot;&gt;//设置定时初值&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;TH0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;0x4C&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;     &lt;span class=&quot;c1&quot;&gt;//设置定时初值&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;TF0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;        &lt;span class=&quot;c1&quot;&gt;//清除TF0标志&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;150&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;      
+
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;在主函数中初始化定时器、开启中断，并使用后移标志。&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;EA&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Timer0Init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MAXWEI&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;delay&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;P0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;P1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;并更改显示内容，适配滚动显示&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;kt&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;EE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;EE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;EE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;EE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;EE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;EE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;EE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;EE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;EE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;E0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;E1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;E2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;E3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;E4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;E5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;E6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;E7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;E8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;E9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;EE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;EE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;EE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;EE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;EE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;EE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;EE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;EE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;EE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;EE&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2018/09/25/5baa33d76257f.png&quot; alt=&quot;5baa33d76257f&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;video src = &quot;http://video-1252834524.cossh.myqcloud.com/VID_20180925_210719.mp4.f30.mp4&quot;&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;part-ffe1193e0f3a9968&quot;&gt;额外的说明&lt;/h2&gt;
+
+&lt;p&gt;滚动显示本质上还是八个数字逐个刷新，所以定义显示内容的数组里面存放了一些不显示的真值，这也是为什么数组长度是29而中断中让标志位等于20后就归零了。&lt;/p&gt;
+</description>
+      </item>
+    
+      <item>
+        <title>电协欢迎你</title>
+        <link>https://witeaa.cn/2018/08/28/%E7%94%B5%E5%8D%8F%E6%AC%A2%E8%BF%8E%E4%BD%A0.html</link>
+        <guid isPermaLink="true">https://witeaa.cn/2018/08/28/%E7%94%B5%E5%8D%8F%E6%AC%A2%E8%BF%8E%E4%BD%A0.html</guid>
+        <pubDate>Tue, 28 Aug 2018 00:00:00 +0000</pubDate>
+        <description>&lt;h1 id=&quot;part-a0f2482b8457d6fb&quot;&gt;&lt;a href=&quot;https://i.loli.net/2018/08/28/5b852a85a236f.png&quot;&gt;传送门&lt;/a&gt;&lt;/h1&gt;
+</description>
+      </item>
+    
+      <item>
+        <title>《电子爱好者》电协入门教材系列</title>
+        <link>https://witeaa.cn/2018/08/20/%E7%94%B5%E5%AD%90%E7%88%B1%E5%A5%BD%E8%80%85.html</link>
+        <guid isPermaLink="true">https://witeaa.cn/2018/08/20/%E7%94%B5%E5%AD%90%E7%88%B1%E5%A5%BD%E8%80%85.html</guid>
+        <pubDate>Mon, 20 Aug 2018 00:00:00 +0000</pubDate>
+        <description>&lt;p&gt;&lt;p align = &quot;center&quot;&gt;&lt;img src = &quot;https://i.loli.net/2018/08/13/5b70e9dfd5ddb.png&quot;&gt;&lt;/align&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;图书简介：《电子爱好者》系列丛书分为上下两部分，上篇主要介绍了电子入门基础，下篇介绍了altiumDesigner以及单片机等知识。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;hr&gt;
+
+&lt;h2 id=&quot;part-654280cbc50&quot;&gt;前言&lt;/h2&gt;
+
+&lt;p&gt;本书为武汉工程大学科技创新基地培训用书，主要用于武汉工程大学电子爱好者协会、武汉工程大学智能车团队基础知识培训用书。&lt;br&gt;
+本书主要内容包括常用电子元器件知识、焊接知识、常用电子工具介绍及使用、小电器维修的基础知识及单片机的简介。适合于电子爱好者基础入门学习，有助于拓展广大同学的知识面，形成从兴趣的培养到由浅入深的学习方法，养成有想法就努力动手去实践的良好习惯，形成一个科学的学习系统。希望各位读者能在使用本书过程中，多多利用课余时间进行动手实践，真正学以致用，让自己快乐的学习成长。&lt;/p&gt;
+
+&lt;p&gt;本书由武汉工程大学电子爱好者协会学生在参考和总结他人文献知识基础上编写而成。由于水平有限，本书中的错误和不足之处在所难免，敬请各位读者批评斧正。&lt;/p&gt;
+
+&lt;p&gt;&lt;p align = &quot;right&quot; &gt; 编者 &lt;/align&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;p align = &quot;right&quot; &gt; 2014.09.1 &lt;/align&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;part-2c937264cf8186d4&quot;&gt;新版前言&lt;/h4&gt;
+
+&lt;p&gt;在原来的基础上重新进行了排版，增加了视频教程内容  （2018.08）&lt;/p&gt;
+
+&lt;h2 id=&quot;part-b9b3ef4ba0ff0c39&quot;&gt;目录（上）&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/witeaa/Witeaa-Textbook/wiki/%E7%AC%AC-1-%E7%AB%A0-%E7%BB%AA%E8%AE%BA&quot;&gt;1.绪论&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/witeaa/Witeaa-Textbook/wiki/%E7%AC%AC-2-%E7%AB%A0-%E7%94%B5%E5%AD%90%E5%AE%9E%E4%B9%A0&quot;&gt;2.电子实习&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/witeaa/Witeaa-Textbook/wiki/%E7%AC%AC-3-%E7%AB%A0-%E5%B8%B8%E7%94%A8%E5%85%83%E4%BB%B6%E4%BB%8B%E7%BB%8D%E5%8F%8A%E6%A3%80%E6%B5%8B%E6%96%B9%E6%B3%95&quot;&gt;3.常用原件介绍级检测方法&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/witeaa/Witeaa-Textbook/wiki/%E7%AC%AC-4-%E7%AB%A0-%E5%B8%B8%E7%94%A8%E7%94%B5%E5%AD%90%E5%B7%A5%E5%85%B7&quot;&gt;4.常用电子工具&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/witeaa/Witeaa-Textbook/wiki/%E7%AC%AC-5-%E7%AB%A0-%E7%84%8A%E6%8E%A5%E5%AE%9E%E4%B9%A0&quot;&gt;5.焊接实习&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/witeaa/Witeaa-Textbook/wiki/%E7%AC%AC-6-%E7%AB%A0-%E8%A1%A8%E9%9D%A2%E8%B4%B4%E8%A3%85%E6%8A%80%E6%9C%AFSMT%E7%AE%80%E4%BB%8B&quot;&gt;6.表面贴装技术SMT简介&lt;/a&gt;&lt;/p&gt;
+</description>
+      </item>
+    
+      <item>
+        <title>GNU C 、ANSI C、标准C、标准c++区别和联系</title>
+        <link>https://witeaa.cn/2018/07/26/GNU-C-ANSI-C-%E6%A0%87%E5%87%86C-%E6%A0%87%E5%87%86c++%E5%8C%BA%E5%88%AB%E5%92%8C%E8%81%94%E7%B3%BB.html</link>
+        <guid isPermaLink="true">https://witeaa.cn/2018/07/26/GNU-C-ANSI-C-%E6%A0%87%E5%87%86C-%E6%A0%87%E5%87%86c++%E5%8C%BA%E5%88%AB%E5%92%8C%E8%81%94%E7%B3%BB.html</guid>
+        <pubDate>Thu, 26 Jul 2018 00:00:00 +0000</pubDate>
+        <description>&lt;p&gt;GNU计划，又称革奴计划，是由Richard Stallman在1983年9月27日公开发起的。它的目标是创建一套完全自由的操作系统。它在编写linux的时候自己制作了一个标准成为 GNU C标准。ANSI 美国国家标准协会,它对C做的标准ANSI C标准后来被国际标准协会接收成为 标准C 所以 ANSI C 和标准C是一个概念&lt;/p&gt;
+
+&lt;h2 id=&quot;ansi-c-c&quot;&gt;&lt;em&gt;ANSI C&lt;/em&gt;和&lt;em&gt;标准C++&lt;/em&gt;的差别&lt;/h2&gt;
+
+&lt;p&gt;这里的ANSI C指的是最新的标准－C99&lt;/p&gt;
+
+&lt;p&gt;1、ANSI C不支持引用&lt;/p&gt;
+
+&lt;p&gt;2、ANSI C不支持函数重载&lt;/p&gt;
+
+&lt;p&gt;3、ANSI C多了两个整型（long long、unsigned long long），不过最新的C++编译器已经支持这两种整型&lt;/p&gt;
+
+&lt;p&gt;4、ANSI C不支持C++中的一个变量初始化方式，例如：int a(8);&lt;/p&gt;
+
+&lt;p&gt;5、ANSI C声明结构时必须使用struct关键字，而标准C++不需要&lt;/p&gt;
+
+&lt;p&gt;6、ANSI C标准库中的一些头文件，在标准C++中有了新的名称，例如ctime、cstring、climits、cfloat、cctype，有些文件不仅是名称上的变化&lt;/p&gt;
+
+&lt;p&gt;7、ANSI C不支持名称空间&lt;/p&gt;
+
+&lt;p&gt;8、ANSI C不包含bool类型，以及true和false关键字&lt;/p&gt;
+
+&lt;p&gt;9、声明函数时，参数为空的含义不同。在ANSI C中表示接受任意个数的参数，而在标准C++中表示不接受参数&lt;/p&gt;
+
+&lt;p&gt;10、ANSI C不支持内联函数&lt;/p&gt;
+
+&lt;p&gt;11、ASNI C不支持默认参数&lt;/p&gt;
+
+&lt;p&gt;12、ANSI C不支持可用于全局变量的作用域解析操作符（：：）&lt;/p&gt;
+
+&lt;p&gt;13、使用const定义的全局常量在ANSI C中具有外部链接性，在标准C++中具有内部链接性，所以在标准C++中声明外部链接性的全局常量必须使用extern，例如：extern const int a = 10;&lt;/p&gt;
+
+&lt;h2 id=&quot;gnu-c-ansi-c&quot;&gt;&lt;em&gt;GNU C&lt;/em&gt;比*&lt;em&gt;ANSI C&lt;/em&gt;扩展的地方&lt;/h2&gt;
+
+&lt;h3 id=&quot;part-b5a651dd6b81cdcb&quot;&gt;允许零长度数组&lt;/h3&gt;
+
+&lt;p&gt;GNU C允许零长度数组，在定义变长对象的头结构时，这个特性非常有用。&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;var_data&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+      &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+      &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+        &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;仅仅意味着程序中通过&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;var_data&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;的结构体实例的&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;成员可以访问&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;之后的第&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;个地址，并没有为&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;分配内存&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;
+   &lt;span class=&quot;err&quot;&gt;假设&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;var_data&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;的数据域保存在&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;var_data&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;紧接着的内存区域，通过如下代码可以遍历这些数据：&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;var_data&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;%02x&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;case&quot;&gt;case范围&lt;/h3&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;n&quot;&gt;GNU&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;C&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;支持&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;这样的语法，区间&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;的数都会满足这个&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;case&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;的条件&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;switch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;
+
+      &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;'0'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;sc&quot;&gt;'9'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-=&lt;/span&gt;&lt;span class=&quot;sc&quot;&gt;'0'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+      &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+      &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;'a'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;sc&quot;&gt;'f'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-=&lt;/span&gt;&lt;span class=&quot;sc&quot;&gt;'a'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+      &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+      &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;'A'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;sc&quot;&gt;'F'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-=&lt;/span&gt;&lt;span class=&quot;sc&quot;&gt;'A'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+      &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;part-c5057bcb6eb90d87&quot;&gt;语句表达式&lt;/h3&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c++&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;n&quot;&gt;GNU&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;把包含在括号里的复合语句看做是一个表达式，称为语句表达式，它可以出现在任何允许表达式的地方。我们可以在语句表达式中使用原本只能在复合语句中使用的循环变量、局部变量等，例如&lt;/span&gt;
+
+&lt;span class=&quot;cp&quot;&gt;#define min_t(type,x,y) /
+&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ia&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ib&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mini&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;mini&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;min_t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ia&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ib&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;err&quot;&gt;这样，因为重新定义了&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__x&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;和&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__y&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;这两个局部变量，所以上述方法定义的宏将不会有副作用。在标准&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;中，对应的宏通常会有副作用：&lt;/span&gt;
+
+&lt;span class=&quot;cp&quot;&gt;#define min(x,y) ((x)&amp;lt;(y)?(x):(y))
+&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;而代码&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ia&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ib&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;将会被展开为&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ia&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ib&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ia&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ib&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;传入宏的参数会被增加两次。&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;typeof&quot;&gt;typeof关键字&lt;/h3&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c++&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;n&quot;&gt;typeof&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;语句可以获得&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;的类型，因此，我们可以借助&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;typeof&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;重新定义第&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;条提到的&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;min_t&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;这个宏&lt;/span&gt;
+
+&lt;span class=&quot;cp&quot;&gt;#define min(x,y) /
+&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;
+
+      &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;typeof&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;
+
+      &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;typeof&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;
+
+      &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;
+
+       &lt;span class=&quot;n&quot;&gt;_x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_y&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+
+&lt;span class=&quot;err&quot;&gt;我们不需要像第三条时那样传一个&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;进去，因为通过&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;typeof&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;可以得到&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;。&lt;/span&gt;
+
+&lt;span class=&quot;err&quot;&gt;代码&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;的作用是检查&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_x&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;和&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_y&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;的类型是否一致。&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;part-39b49c7a92b95cbc&quot;&gt;可变参数的宏&lt;/h3&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c++&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;err&quot;&gt;标准&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;只支持可变参数的函数，意味着函数的参数可以是不固定的&lt;/span&gt;
+
+&lt;span class=&quot;err&quot;&gt;例如&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;函数的原型是&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;format&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;argument&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]...)&lt;/span&gt;
+
+&lt;span class=&quot;err&quot;&gt;而在&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;GNU&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;中，宏也可以接受可变数目的参数，例如&lt;/span&gt;
+
+&lt;span class=&quot;cp&quot;&gt;#define pr_debug(fmt,arg...) printk(fmt,##arg)
+&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;这里&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arg&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;表示其余的参数可以是零个或多个，这些参数以及参数之间的逗号构成&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arg&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;的值，&lt;/span&gt;
+
+&lt;span class=&quot;err&quot;&gt;在宏扩展时替换&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arg&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;，例如&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;pr_debug&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;%s:%d&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;line&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;err&quot;&gt;被扩展为&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;printk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;%s:%d&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;line&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;err&quot;&gt;使用##的原因是为了处理&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arg&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;不代表任何参数的情况，这时候，前面的逗号就变得多余了。&lt;/span&gt;
+
+&lt;span class=&quot;err&quot;&gt;使用##之后，&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;GNU&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;预处理器会丢弃前面的逗号，这样代码&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;pr_debug&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;success!/n&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;会被正确扩展为&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;printk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;success!/n&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;err&quot;&gt;而不是&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;printk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;success!/n&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,);&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;part-2cc3171a21a4bf65&quot;&gt;标号元素&lt;/h3&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c++&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;err&quot;&gt;标准&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;要求数组或结构体的初始化值必须以固定的顺序出现，在&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;GNU&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;中，通过指定索引或结构体成员名，允许初始化值得以任意顺序出现。&lt;/span&gt;
+
+&lt;span class=&quot;err&quot;&gt;指定数组索引的方法是在初始化值前添加&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;INDEX&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;，当然也可以用&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;FIRST&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;LAST&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;的形式指定一个范围。例如下面的代码定义一个数组，并把其中的所有元素赋值为&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;：&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MAX&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{[&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;..&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MAX&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;下面的代码借助结构体成员名初始化结构体：&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;file_operations&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DEMO_fops&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;owner&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;THIS_MODULE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+
+    &lt;span class=&quot;nl&quot;&gt;llseek:&lt;/span&gt;      &lt;span class=&quot;n&quot;&gt;DEMO_llseek&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+
+    &lt;span class=&quot;nl&quot;&gt;read:&lt;/span&gt;       &lt;span class=&quot;n&quot;&gt;DEMO_read&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+
+    &lt;span class=&quot;nl&quot;&gt;write:&lt;/span&gt;       &lt;span class=&quot;n&quot;&gt;DEMO_write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+
+    &lt;span class=&quot;nl&quot;&gt;ioctl:&lt;/span&gt;        &lt;span class=&quot;n&quot;&gt;DEMO_ioctl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+
+    &lt;span class=&quot;nl&quot;&gt;open:&lt;/span&gt;        &lt;span class=&quot;n&quot;&gt;DEMO_open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+
+    &lt;span class=&quot;nl&quot;&gt;release:&lt;/span&gt;   &lt;span class=&quot;n&quot;&gt;DEMO_release&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+&lt;span class=&quot;err&quot;&gt;但是&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Linux&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;2.6&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;还是推荐采用标准&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;的方式，如下&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;file_operations&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DEMO_fops&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;owner&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;THIS_MODULE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+
+    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;llseek&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;   &lt;span class=&quot;n&quot;&gt;DEMO_llseek&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+
+    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;read&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;     &lt;span class=&quot;n&quot;&gt;DEMO_read&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+
+    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;write&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;DEMO_write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+
+    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ioctl&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;DEMO_ioctl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+
+    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;open&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;     &lt;span class=&quot;n&quot;&gt;DEMO_open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+
+    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;release&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DEMO_release&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;part-ccce67911e5f326b&quot;&gt;当前函数名&lt;/h3&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c++&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;n&quot;&gt;GUN&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;预定义了两个标识符保存当前的函数名，&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__FUNCTION__&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;保存函数在源码中的名字，&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;__PRETTY_FUNCTION__&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;保存带语言特色的名字。在&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;函数中，这两个名字是相同的。&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;example&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+      &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;This is function: %s &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__FUNCTION__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;代码中的&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__FUNCTION__&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;意味着字符串&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;example&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;part-727e10b2fe0fb951&quot;&gt;特殊属性声明&lt;/h3&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c++&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;n&quot;&gt;GNU&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;允许声明函数、变量和类型的特殊属性，以便进行手工的代码优化和定制代码检查的方法。指定一个声明的属性，只需要在申明后添加&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__attribute__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ATTRIBUTE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;span class=&quot;err&quot;&gt;其中&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ATTRIBUTE&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;为属性说明，如果存在多个属性，则以逗号分隔。&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;GNU&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;支持&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;noreturn&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;format&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;section&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;aligned&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;packed&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;等十多个属性&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;noreturn&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;属性作用于函数，表示该函数从不返回。这会让编译器优化代码，并消除不必要的的警告信息。例如&lt;/span&gt;
+
+&lt;span class=&quot;cp&quot;&gt;#define ATTRIB_NORET __attribute__ ((noreturn)) ....
+&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;asmlinkage&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NORET_TYPE&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;do_exit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;long&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;error_code&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ATTRIB_NORET&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;属性也可用于函数，表示该函数&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;scanf&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;或&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strftime&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;风格的参数，指定&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;属性可以让编译器根据格式串检查参数类型。例如：&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;asmlinkage&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;printk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fmt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,...)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;__attribute__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)));&lt;/span&gt;
+
+&lt;span class=&quot;err&quot;&gt;详细的可以看&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;http&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//blog.163.com/sunm_lin/blog/static/9192142200741533038695/&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;unused&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;属性作用于函数和变量，表示该函数或变量可能不会被用到，避免编译器产生的警告信息。&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;aligned&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;属性指定结构体、变量、联合体的对齐方式。&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;packed&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;属性作用于变量和类型，表示压缩结构体，使用最小的内存。&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;examprl_struct&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+      &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+      &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+      &lt;span class=&quot;kt&quot;&gt;long&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__attribute__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;packed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+
+&lt;span class=&quot;err&quot;&gt;注意，这个&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__attribute__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;packed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;只能用在&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;GNU&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;C&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;part-2b81bb92dfb51ae3&quot;&gt;内建函数&lt;/h3&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c++&quot; data-lang=&quot;c++&quot;&gt;&lt;span class=&quot;n&quot;&gt;GNU&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;C&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;提供了大量的内建函数，其中很多是标准&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;C&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;库函数的内建版本，例如&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;memcpy&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;，它们与对应的&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;C&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;库函数功能相同，本文不讨论这类函数，其他内建函数的名字通常以&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__builtin&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;开始。&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__builtin_return_address&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;LEVEL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;err&quot;&gt;内建函数&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__builtin_return_address&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;返回当前函数或其调用者的返回地址，参数&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;LEVEL&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;指定在栈上搜索框架的个数，&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;表示当前函数的返回地址，&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;表示当前函数的调用者的返回地址，依此类推。例如：&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;++++&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;kernel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sched&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;
+
+&lt;span class=&quot;mi&quot;&gt;437&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;                 &lt;span class=&quot;n&quot;&gt;printk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;KERN_ERR&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;“&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;schedule_timeout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;wrong&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;timeout&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;
+
+&lt;span class=&quot;mi&quot;&gt;438&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;                        &lt;span class=&quot;err&quot;&gt;“&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lx&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;timeout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+
+&lt;span class=&quot;mi&quot;&gt;439&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;                        &lt;span class=&quot;n&quot;&gt;__builtin_return_address&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__builtin_constant_p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;EXP&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;err&quot;&gt;内建函数&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__builtin_constant_p&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;用于判断一个值是否为编译时常数，如果参数&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EXP&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;的值是常数，函数返回&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;，否则返回&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;。例如：&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;++++&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;include&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;asm&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i386&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bitops&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;h&lt;/span&gt;
+
+&lt;span class=&quot;mi&quot;&gt;249&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;define&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test_bit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;addr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;
+
+&lt;span class=&quot;mi&quot;&gt;250&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__builtin_constant_p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;
+
+&lt;span class=&quot;mi&quot;&gt;251&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;constant_test_bit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;addr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;
+
+&lt;span class=&quot;mi&quot;&gt;252&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;variable_test_bit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;addr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+
+&lt;span class=&quot;err&quot;&gt;很多计算或操作在参数为常数时有更优化的实现，在&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;GNU&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;C&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;中用上面的方法可以根据参数是否为常数，只编译常数版本或非常数版本，这样既不失通用性，又能在参数是常数时编译出最优化的代码。&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__builtin_expect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;EXP&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;err&quot;&gt;内建函数&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__builtin_expect&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;用于为编译器提供分支预测信息，其返回值是整数表达式&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EXP&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;的值，&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;C&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;的值必须是编译时常数。例如：&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;++++&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;include&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;linux&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;compiler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;h&lt;/span&gt;
+
+&lt;span class=&quot;mi&quot;&gt;13&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;define&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;likely&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;       &lt;span class=&quot;n&quot;&gt;__builtin_expect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;mi&quot;&gt;14&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;define&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;unlikely&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;     &lt;span class=&quot;n&quot;&gt;__builtin_expect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;++++&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;kernel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sched&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;
+
+&lt;span class=&quot;mi&quot;&gt;564&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;         &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;unlikely&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;in_interrupt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+&lt;span class=&quot;mi&quot;&gt;565&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;                 &lt;span class=&quot;n&quot;&gt;printk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Scheduling&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;interrupt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;mi&quot;&gt;566&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;                 &lt;span class=&quot;n&quot;&gt;BUG&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+&lt;span class=&quot;mi&quot;&gt;567&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;err&quot;&gt;这个内建函数的语义是&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EXP&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;的预期值是&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;，编译器可以根据这个信息适当地重排语句块的顺序，使程序在预期的情况下有更高的执行效率。上面的例子表示处于中断上下文是很少发生的，第&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;565&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;566&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;行的目标码可能会放在较远的位置，以保证经常执行的目标码更紧凑。&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+      </item>
+    
+      <item>
+        <title>STC8单片机硬件IIC</title>
+        <link>https://witeaa.cn/2018/04/06/STC8%E5%8D%95%E7%89%87%E6%9C%BA%E7%A1%AC%E4%BB%B6IIC.html</link>
+        <guid isPermaLink="true">https://witeaa.cn/2018/04/06/STC8%E5%8D%95%E7%89%87%E6%9C%BA%E7%A1%AC%E4%BB%B6IIC.html</guid>
+        <pubDate>Fri, 06 Apr 2018 00:00:00 +0000</pubDate>
+        <description>&lt;hr&gt;
+
+&lt;ol&gt;
+&lt;li&gt; IIC功能脚切换寄存器&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://bucket1-1252834524.picgz.myqcloud.com/upload/131674694471437914.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://bucket1-1252834524.picgz.myqcloud.com/upload/131674695936943036.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;IIC配置寄存器&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://bucket1-1252834524.picgz.myqcloud.com/upload/131674698352917195.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;MSSPEED[6:1]:IIC总线速度（等待时钟数）&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://bucket1-1252834524.picgz.myqcloud.com/upload/131674699837917373.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://bucket1-1252834524.picgz.myqcloud.com/upload/131674700820522342.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;IIC主机控制寄存器&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://bucket1-1252834524.picgz.myqcloud.com/upload/131674702005262273.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://bucket1-1252834524.picgz.myqcloud.com/upload/131674705929026038.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;示例代码&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt; &lt;span class=&quot;cp&quot;&gt;#include &quot;STC8.h&quot;
+&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;#include &quot;intrins.h&quot;
+&lt;/span&gt;
+ &lt;span class=&quot;cp&quot;&gt;#define obSDA =P14;
+&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;#define obSCL =P15;
+&lt;/span&gt;
+ &lt;span class=&quot;cp&quot;&gt;#define OBIIC_Wait() while(!(I2CMSST&amp;amp;0x40));\
+                     I2CMSST &amp;amp;= ~0x40
+&lt;/span&gt;
+ &lt;span class=&quot;cp&quot;&gt;#define OBIIC_Start() I2CMSCR = 0x01; OBIIC_Wait()
+&lt;/span&gt;
+ &lt;span class=&quot;cp&quot;&gt;#define OBIIC_SendData(Data) I2CTXD = Data; I2CMSCR &amp;gt; = 0x02; OBIIC_Wait()
+&lt;/span&gt;
+ &lt;span class=&quot;cp&quot;&gt;#define OBIIC_RecvACK() I2CMSCR = 0x03;OBIIC_Wait()
+&lt;/span&gt;
+ &lt;span class=&quot;cp&quot;&gt;#define OBIIC_SendACK() I2CMSST = 0x00;I2CMSCR = 0x05;OBIIC_Wait()
+&lt;/span&gt;
+ &lt;span class=&quot;cp&quot;&gt;#define OBIIC_SendNAK() I2CMSST = 0x01;I2CMSCR = 0x05;OBIIC_Wait()
+&lt;/span&gt;
+ &lt;span class=&quot;cp&quot;&gt;#define OBIIC_Stop() I2CMSCR = 0x06;OBIIC_Wait()
+&lt;/span&gt;
+
+ &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;delay&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+ &lt;span class=&quot;k&quot;&gt;extern&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;OBIIC_RecvData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;在main函数里配置寄存器以启用硬件IIC (iic功能脚可以自己设置，并将P_SW2的最高位置1)&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;    &lt;span class=&quot;n&quot;&gt;P_SW2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mh&quot;&gt;0xb0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; 
+    &lt;span class=&quot;n&quot;&gt;I2CCFG&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mh&quot;&gt;0xe0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;I2CMSST&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mh&quot;&gt;0x00&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;实例代码下载（暂不提供外网下载）&lt;br&gt;
+&lt;a href=&quot;http://pan.witeaa.tk/index.php?share/folder&amp;user=1&amp;sid=GvheCgzX&quot;&gt;内网高速下载&lt;/a&gt; &lt;/p&gt;
+</description>
+      </item>
+    
+      <item>
+        <title>水壶维修</title>
+        <link>https://witeaa.cn/2018/03/18/%E6%B0%B4%E5%A3%B6%E7%BB%B4%E4%BF%AE.html</link>
+        <guid isPermaLink="true">https://witeaa.cn/2018/03/18/%E6%B0%B4%E5%A3%B6%E7%BB%B4%E4%BF%AE.html</guid>
+        <pubDate>Sun, 18 Mar 2018 00:00:00 +0000</pubDate>
+        <description>&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;https://bucket1-1252834524.picgz.myqcloud.com/upload/131658541258891349.jpg&quot;width=720&gt;&lt;/div&gt;
+  
+
+&lt;h4 id=&quot;part-66d3211213cdce98&quot;&gt;论修水壶的正确姿势&lt;/h4&gt;
+
+&lt;p&gt;相信无论是在家里还是在寝室里面，大家都会用到经常用到热水壶吧，天气冷的时候烧上一壶热水，瞬间就觉得好满足啊。&lt;br&gt;
+可是水壶用多了之后就会出现各种各样的问题了，有些问题其实只是特别小的问题，自己动手就可以解决了。这次给大家带来了修水壶的小视频，来学学在家里维修水壶的正确姿势吧!&lt;br&gt;
+        &lt;div align=&quot;center&quot;&gt;&lt;video src=&quot;http://witeaa-1252834524.file.myqcloud.com/wx-sh.mp4&quot; controls=&quot;controls&quot; width=85%&gt;this is a video&lt;br&gt;
+            &lt;/video&gt;&lt;/div&gt;&lt;/p&gt;
+</description>
+      </item>
+    
+      <item>
+        <title>pdf文档解密工具</title>
+        <link>https://witeaa.cn/2018/03/07/pdf%E8%A7%A3%E5%AF%86%E5%B7%A5%E5%85%B7.html</link>
+        <guid isPermaLink="true">https://witeaa.cn/2018/03/07/pdf%E8%A7%A3%E5%AF%86%E5%B7%A5%E5%85%B7.html</guid>
+        <pubDate>Wed, 07 Mar 2018 00:00:00 +0000</pubDate>
+        <description>&lt;h1 id=&quot;portable-pdf-unlocker&quot;&gt;Portable PDF Unlocker&lt;/h1&gt;
+
+&lt;h4 id=&quot;pdf&quot;&gt;pdf文档解密工具&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://sourceforge.net/projects/portablepdfunlocker/&quot;&gt;下载地址&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2018/08/05/5b667d3729913.png&quot; alt=&quot;5b667d3729913&quot;&gt;&lt;/p&gt;
+</description>
+      </item>
+    
+      <item>
+        <title>百度云的“链接不存在或失效”怎么破?</title>
+        <link>https://witeaa.cn/2018/02/09/%E7%99%BE%E5%BA%A6%E4%BA%91%E7%9A%84%E9%93%BE%E6%8E%A5%E4%B8%8D%E5%AD%98%E5%9C%A8%E6%88%96%E5%A4%B1%E6%95%88%E6%80%8E%E4%B9%88%E7%A0%B4.html</link>
+        <guid isPermaLink="true">https://witeaa.cn/2018/02/09/%E7%99%BE%E5%BA%A6%E4%BA%91%E7%9A%84%E9%93%BE%E6%8E%A5%E4%B8%8D%E5%AD%98%E5%9C%A8%E6%88%96%E5%A4%B1%E6%95%88%E6%80%8E%E4%B9%88%E7%A0%B4.html</guid>
+        <pubDate>Fri, 09 Feb 2018 00:00:00 +0000</pubDate>
+        <description>&lt;p&gt;相信大家不管是领取干货资料还是通过百度云发送文档给伙伴，都会碰到以下问题：&lt;/p&gt;
+
+&lt;p&gt;你打开的文件已失效；&lt;/p&gt;
+
+&lt;p&gt;啊哦，你来晚了，分享的文件已经被取消了，下次要早点哟；&lt;/p&gt;
+
+&lt;p&gt;你所打开的链接不存在。&lt;/p&gt;
+
+&lt;p&gt;或是你分享的内容可能涉及隐私、侵权&lt;/p&gt;
+
+&lt;p&gt;啊哦！链接错误没找到文件，请打开正确的分享链接!&lt;/p&gt;
+
+&lt;p&gt;碰到这些问题，很多小伙伴直接的反应就是“算啦”。但是今天碰到我，我从技术层面给你解决解决。&lt;/p&gt;
+
+&lt;h4 id=&quot;1&quot;&gt;1、修改网址&lt;/h4&gt;
+
+&lt;p&gt;假设原网盘网址是 pan.baidu.com/share/ &lt;strong&gt;linkshareid=76297&lt;/strong&gt; &amp;amp;uk=3033397054&lt;/p&gt;
+
+&lt;p&gt;只需将加粗部分替换为home?&lt;/p&gt;
+
+&lt;p&gt;即pan.baidu.com/share/ &lt;strong&gt;home?&lt;/strong&gt; uk=3033397054&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://bucket1-1252834524.cosgz.myqcloud.com/v2%0A-267280e4c84fd858c18aadae5f45d2f6_r.jpg&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;还有就是这样的&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://bucket1-1252834524.cosgz.myqcloud.com/v2-bbcbfef0b0c43e819385b049a8a7d82e_r.jpg&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;这时候在分享者的主页里，我们有可能找到自己想要的文件资源。&lt;/p&gt;
+
+&lt;p&gt;如果到了这里还找不到，那么可能是分享者把文件删除了或者移入了我们看不到的隐藏空间，无法下载。&lt;/p&gt;
+
+&lt;h4 id=&quot;2&quot;&gt;2、胖次&lt;/h4&gt;
+
+&lt;p&gt;胖次是“内裤”的意思，是日文パンツ的音译。胖次这个网站收录了大量的失效资源链接。而且其中还有一个最为关键功能：一键解析失效网站，直接粘贴失效网址便可解析（如下图）&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://bucket1-1252834524.cosgz.myqcloud.com/v2%0A-439edfce61bb56538289f4f3f8720152_r.jpg&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;这两种方法对于失效网盘链接非常有效，尤其是我们经常需要去找寻一些工具的安装包使用。&lt;/p&gt;
+
+&lt;p&gt;原文&lt;a href=&quot;https://zhuanlan.zhihu.com/p/31511997?utm_source=com.miui.notes&amp;utm_medium=social&quot;&gt;https://zhuanlan.zhihu.com/p/31511997?utm_source=com.miui.notes&amp;amp;utm_medium=social&lt;/a&gt;&lt;/p&gt;
+</description>
+      </item>
+    
+      <item>
+        <title>如何用ｐｓ制作海报中的水波纹倒影的效果</title>
+        <link>https://witeaa.cn/2018/02/07/%E5%A6%82%E4%BD%95%E7%94%A8%EF%BD%90%EF%BD%93%E5%88%B6%E4%BD%9C%E6%B5%B7%E6%8A%A5%E4%B8%AD%E7%9A%84%E6%B0%B4%E6%B3%A2%E7%BA%B9%E5%80%92%E5%BD%B1%E7%9A%84%E6%95%88%E6%9E%9C.html</link>
+        <guid isPermaLink="true">https://witeaa.cn/2018/02/07/%E5%A6%82%E4%BD%95%E7%94%A8%EF%BD%90%EF%BD%93%E5%88%B6%E4%BD%9C%E6%B5%B7%E6%8A%A5%E4%B8%AD%E7%9A%84%E6%B0%B4%E6%B3%A2%E7%BA%B9%E5%80%92%E5%BD%B1%E7%9A%84%E6%95%88%E6%9E%9C.html</guid>
+        <pubDate>Wed, 07 Feb 2018 00:00:00 +0000</pubDate>
+        <description>&lt;p&gt;分两层看待：第一层是物体的倒影，第二层是水波的反光。&lt;/p&gt;
+
+&lt;p&gt;第一层比较简单，将毛笔垂直反转，挪到下方，使用滤镜—扭曲—波浪。参数自己视情况调整。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://bucket1-1252834524.cosgz.myqcloud.com/v2-44e7f21c539f4f4fcb1fb50614b6e982_r.jpg&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;海报中的波浪主要是横向的，所以最下方“比例”中“垂直”的数值要调小。海报中的倒影相比较原物，失真还是比较大的，所以“波长”短一些，“幅度”大一些。&lt;/p&gt;
+
+&lt;p&gt;第二层稍微有点麻烦，需要先制造一层“云”。将前景色设为白色，后景色设为黑色。新建图层，使用滤镜—渲染—云彩，得到一层这样的：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://bucket1-1252834524.cosgz.myqcloud.com/v2-fe4237b0747cf1f1747136f9de5835fb_r.jpg&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;然后同样使用波浪。这次的波浪参数会更难调。这次的波长要略微增长一些，波幅更大一些，其他参数视情况调整。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://bucket1-1252834524.cosgz.myqcloud.com/v2-791a22d6b27fda57acc98f594999dbda_r.jpg&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;这样的效果就差不多了。记得叠加方式改为滤色，然后添加蒙版调整水波的位置。背景也可以自己丰富以下。左右可以添加一些云雾，云的做法上面也提到了。&lt;/p&gt;
+
+&lt;p&gt;我做的作业是这样的：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://bucket1-1252834524.cosgz.myqcloud.com/v2-57b41bf6896ecd53eee242e6d0d65e18_r.jpg&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;原文&lt;a href=&quot;https://www.zhihu.com/question/265522677/answer/296255631?utm_source=com.miui.notes&amp;utm_medium=social&quot;&gt;https://www.zhihu.com/question/265522677/answer/296255631?utm_source=com.miui.notes&amp;amp;utm_medium=social&lt;/a&gt;&lt;/p&gt;
+</description>
+      </item>
+    
+      <item>
+        <title>最蠢密码排行榜 看看你的密码在不在上面</title>
+        <link>https://witeaa.cn/2018/02/06/%E6%9C%80%E8%A0%A2%E5%AF%86%E7%A0%81%E6%8E%92%E8%A1%8C%E6%A6%9C-%E7%9C%8B%E7%9C%8B%E4%BD%A0%E7%9A%84%E5%AF%86%E7%A0%81%E5%9C%A8%E4%B8%8D%E5%9C%A8%E4%B8%8A%E9%9D%A2.html</link>
+        <guid isPermaLink="true">https://witeaa.cn/2018/02/06/%E6%9C%80%E8%A0%A2%E5%AF%86%E7%A0%81%E6%8E%92%E8%A1%8C%E6%A6%9C-%E7%9C%8B%E7%9C%8B%E4%BD%A0%E7%9A%84%E5%AF%86%E7%A0%81%E5%9C%A8%E4%B8%8D%E5%9C%A8%E4%B8%8A%E9%9D%A2.html</guid>
+        <pubDate>Tue, 06 Feb 2018 00:00:00 +0000</pubDate>
+        <description>&lt;p&gt;很多人为了省事、好记，会把密码设置的非常简单，甚至有些心大的人更是把所有平台账号密码都设置成一样的， 但是殊不知，那些安全性低的密码，可轻松被黑客破解，为他们&amp;quot;破门而入&amp;quot;提供了不少方便。&lt;/p&gt;
+
+&lt;p&gt;在统计了超过500万个今年黑客泄露的账号后，知名安全机构SplashData整理出了2017年最危险密码榜单。火绒安全小编从其中略窥一二，并总结出一些规律。&lt;/p&gt;
+
+&lt;h4 id=&quot;part-3786f05a6e49845&quot;&gt;滚键盘&lt;/h4&gt;
+
+&lt;p&gt;连续数字一直是人们的最爱，例如常年霸榜的&amp;quot;123456&amp;quot;、排在第3位的&amp;quot;12345678&amp;quot;、第5位的&amp;quot;12345&amp;quot;、第6位的&amp;quot;123456789&amp;quot;……很难想象，当下仍有这么多人使用这么简单的密码。排在第4位的&amp;quot;qwerty&amp;quot;看似复杂一些，其实只是键盘字母顺序罢了。&lt;/p&gt;
+
+&lt;h4 id=&quot;part-930869bca5fd6d67&quot;&gt;单词、简单短语&lt;/h4&gt;
+
+&lt;p&gt;&amp;quot;password&amp;quot;一直与&amp;quot;123456&amp;quot;并称双雄，直接使用密码的单词当密码也是心大。同样懒惰的还有排在第9位的&amp;quot;football&amp;quot;（足球）、第11位的&amp;quot;admin&amp;quot;（管理员）、第14位的&amp;quot;login&amp;quot;（登录）等。&lt;/p&gt;
+
+&lt;p&gt;短语密码稍微复杂了些，但也不过是五十步笑百步，例如挤进排行榜TOP10的&amp;quot;letmein&amp;quot;（让我进去：Let me in）及&amp;quot;iloveyou&amp;quot;（我爱你：I love you）等。最有意思的是排在第25位的&amp;quot;trustno1&amp;quot;。看出是什么意思了么？不相信任何人：Trust no one。&lt;/p&gt;
+
+&lt;h4 id=&quot;part-ae286c1cdc904c1d&quot;&gt;使用人名、品牌名&lt;/h4&gt;
+
+&lt;p&gt;当然，也有很多人使用自己喜爱的明星以及品牌名作为密码，例如排在第28位的&amp;quot;harley&amp;quot;（哈利）、第31位的&amp;quot;robert&amp;quot;（罗伯特）等；排名37的&amp;quot;lakers&amp;quot;（湖人队）及排名43位的&amp;quot;ferrari&amp;quot;（法拉利）等。&lt;/p&gt;
+
+&lt;h5 id=&quot;part-523eecf28c87789d&quot;&gt;使用流行语&lt;/h5&gt;
+
+&lt;p&gt;今年密码&amp;quot;starwars&amp;quot;异军突起，从不入榜单一路杀进16强。原来是因为今年上映了《星球大战》（Star Wars）的新片，由此可见《星球大战》的营销做得确实不错，黑客们也知道用流行词语试探密码。&lt;/p&gt;
+
+&lt;p&gt;除此之外，很多自以为聪明的网友会用替换、重复、叠加、变形等方式对密码稍作调整，以为可以高枕无忧，然而事实证明这些并没有什么卵用。在今年危险密码榜单中就有诸多此类账号，并且利用率很高，例如： 字母和数字叠加-&amp;quot;abc123&amp;quot;、重复使用数字-&amp;quot;123123&amp;quot;、数字代替字母- &amp;quot;passw0rd&amp;quot;等等。只能劝告你一句，你想到了，黑客也能想到。&lt;/p&gt;
+
+&lt;p&gt;根据小编行走江湖多年经验，在此提供几个设置密码的思路，供大家参考。&lt;/p&gt;
+
+&lt;p&gt;1、为不同账户设置不同密码&lt;/p&gt;
+
+&lt;p&gt;其实记住大量密码也不是很难，只要先设置一个需要记忆的基础密码+网站代码就OK了，网站代码按一定规律生成，例如网站全拼前两个字母的大写与小写+网站全拼后两个字母的小写与大写，以支付宝（zhifubao）为例，网站代码即ZhaO，其他APP以此类推。&lt;/p&gt;
+
+&lt;p&gt;2、设置足够复杂的密码&lt;/p&gt;
+
+&lt;p&gt;设置复杂的基础密码也不难，选取一句话全拼的首字母，将第一个字母大写，在加上自己的生日即可。以&amp;quot;我最爱吃麦当劳的巧克力圣代&amp;quot;为例，Wzacmdldqklsd1990。句子越长越复杂哦。&lt;/p&gt;
+
+&lt;p&gt;PS:前两条结合后，支付宝的密码是：ZhWzacmdldqklsd1990aO，是不是觉得非常有安全感，黑客看了都要望而却步。&lt;/p&gt;
+
+&lt;p&gt;3、定期修改密码&lt;/p&gt;
+
+&lt;p&gt;这个最简单，其实就是隔几个月换一套规则而已。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://bucket1-1252834524.cosgz.myqcloud.com/v2-095c38d38e9a4aa774dcda8b09880878_hd.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://bucket1-1252834524.cosgz.myqcloud.com/v2-1fba0e8b5055ed6616ee3efa5ef19ea3_hd.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;em&gt;来源：&lt;a href=&quot;https://zhuanlan.zhihu.com/p/32956310?utm_source=com.miui.notes&amp;utm_medium=social&quot;&gt;https://zhuanlan.zhihu.com/p/32956310?utm_source=com.miui.notes&amp;amp;utm_medium=social&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+</description>
+      </item>
+    
+      <item>
+        <title>WriterWork2下载</title>
+        <link>https://witeaa.cn/2018/01/24/WriterWork2.html</link>
+        <guid isPermaLink="true">https://witeaa.cn/2018/01/24/WriterWork2.html</guid>
+        <pubDate>Wed, 24 Jan 2018 00:00:00 +0000</pubDate>
+        <description>&lt;h1 id=&quot;markdown&quot;&gt;一款Markdown编辑器&lt;/h1&gt;
+
+&lt;h2 id=&quot;part-8e5cbaccda2b38d4&quot;&gt;&lt;img src=&quot;http://bucket1-1252834524.picgz.myqcloud.com/upload/131639542435846551.png&quot; alt=&quot;&quot;&gt;&lt;/h2&gt;
+
+&lt;h3 id=&quot;part-6542f4d68c4&quot;&gt;简介&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;集成谷歌内核&lt;/li&gt;
+&lt;li&gt;集成免费高速图床&lt;/li&gt;
+&lt;li&gt;在线图库&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;part-3786deaf8945549&quot;&gt;快捷键&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Bold&lt;/strong&gt; (&lt;code class=&quot;prettyprint&quot;&gt;Ctrl+B&lt;/code&gt;) and &lt;em&gt;Italic&lt;/em&gt; (&lt;code class=&quot;prettyprint&quot;&gt;Ctrl+I&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;Quotes (&lt;code class=&quot;prettyprint&quot;&gt;Ctrl+Q&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;Code blocks (&lt;code class=&quot;prettyprint&quot;&gt;Ctrl+K&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;Headings 1, 2, 3 (&lt;code class=&quot;prettyprint&quot;&gt;Ctrl+1&lt;/code&gt;, &lt;code class=&quot;prettyprint&quot;&gt;Ctrl+2&lt;/code&gt;, &lt;code class=&quot;prettyprint&quot;&gt;Ctrl+3&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;Lists (&lt;code class=&quot;prettyprint&quot;&gt;Ctrl+U&lt;/code&gt; ) &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;part-2c5c0dc81885b0ef&quot;&gt;安装需求&lt;/h3&gt;
+
+&lt;p&gt;.NET FrameWork 4.5.1或以上版本&lt;/p&gt;
+
+&lt;h3 id=&quot;part-2bdf3d20f1791c41&quot;&gt;下载地址&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;&quot;&gt;WriteWork2_V2.3_publicRelease&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;part-43943e1e0ad929d0&quot;&gt;最新版本说明&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;可在插入图片时调整图片大小&lt;/li&gt;
+&lt;li&gt;优化UI&lt;/li&gt;
+&lt;li&gt;解决图片上传时可能遇到的bug&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;part-2caf4f53152f1251&quot;&gt;更新补丁&lt;/h3&gt;
+
+&lt;p&gt;暂无&lt;/p&gt;
+
+&lt;h3 id=&quot;part-1282cf95d5da409d&quot;&gt;有任何问题可在下面的评论中反馈&lt;/h3&gt;
+</description>
+      </item>
+    
+      <item>
+        <title>HelloWorld!</title>
+        <link>https://witeaa.cn/2018/01/24/Helloworld.html</link>
+        <guid isPermaLink="true">https://witeaa.cn/2018/01/24/Helloworld.html</guid>
+        <pubDate>Wed, 24 Jan 2018 00:00:00 +0000</pubDate>
+        <description>&lt;p&gt;welcome everyone，wit电子爱好者协会的官网今天正式上线啦&lt;br&gt;
+在这个世上，每时每刻都有新的事物诞生，与之相对，每分每秒也有事物在消逝，我们此刻见证电协的官网诞生，期待着它日后更好的发展，也许在未来的某一刻，会发生我们不愿意见到的事情，我们会分散，甚至再无相见之日。然而，生这个字所蕴含的意义里，欢乐必然是多于悲伤的，希望必然是多于失望的，就算已经预见到未来可能发生的种种不幸的结局，此刻仍然应该选择微笑着为新生的事物祝福。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;只要能够有机会陪你们走过这一段路，我就不再害怕此后的所有风雨和别离。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;part-2bdf3d20f11d00fe&quot;&gt;下载中心&lt;/h4&gt;
+
+&lt;p&gt;这里我们会给大家分享一些有关电子小制作的资料，一些最新的科技方面的知识也可以在这里找到哟&lt;/p&gt;
+
+&lt;h4 id=&quot;part-2cac2d50bfc845d1&quot;&gt;最新动态&lt;/h4&gt;
+
+&lt;p&gt;在这里大家能看到电协最新的活动安排和比赛情况，希望这里能够记录下至此以后每一届电协的故事。&lt;/p&gt;
+
+&lt;p&gt;网站的完善还需要一些时间，希望大家能够耐心等待一段日子啦&lt;/p&gt;
+
+&lt;p&gt;大家有什么好的建议也可以给官q或者官微留言，电儿会督促小哥哥们改进的&lt;br&gt;
+但愿以后能够带给大家更好的体验&lt;br&gt;
+最后谢谢大家的支持，相信我们的故事还有很长，以后的路，电协陪你们一起走&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;最后还要感谢电协safufu的小哥哥们，为了做好这个网站在考试前一天晚上都在努力工作呢，比心～&lt;/p&gt;
+
+&lt;hr&gt;
+</description>
+      </item>
+    
+      <item>
+        <title>安装Keil C51</title>
+        <link>https://witeaa.cn/2018/01/24/%E5%AE%89%E8%A3%85Keil-C51.html</link>
+        <guid isPermaLink="true">https://witeaa.cn/2018/01/24/%E5%AE%89%E8%A3%85Keil-C51.html</guid>
+        <pubDate>Wed, 24 Jan 2018 00:00:00 +0000</pubDate>
+        <description>&lt;p&gt;&lt;strong&gt;首先需要到下载页面获取KeilC51&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;将下载好的压缩包解压&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;运行安装程序    &lt;img src=&quot;https://s1.ax2x.com/2018/01/24/so2Fr.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;安装完毕后 右键-&amp;gt;以管理员身份运行&lt;br&gt;
+&lt;img src=&quot;https://s1.ax2x.com/2018/01/24/sogwy.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;
+4.打开许可管理&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://s1.ax2x.com/2018/01/24/sq9y6.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;5.将红色框的内容复制&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://s1.ax2x.com/2018/01/24/sqD8p.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;6.在解压出的文件夹中运行&lt;img src=&quot;https://s1.ax2x.com/2018/01/24/sqFH3.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://s1.ax2x.com/2018/01/24/sqXwn.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;
+&lt;img src=&quot;https://s1.ax2x.com/2018/01/24/sqVLQ.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;
+7.返回到KEIL中&lt;br&gt;
+&lt;img src=&quot;https://s1.ax2x.com/2018/01/24/sqQYa.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;
+&lt;img src=&quot;https://s1.ax2x.com/2018/01/24/uHDsz.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;最后点击确定即可&lt;br&gt;
+到此KeilC51就安装完毕了&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h1 id=&quot;stc-keil&quot;&gt;将STC头文件加入KEIL&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;首先需要到下载页面下载STC-isp&lt;/strong&gt;&lt;br&gt;
+1. 将下载好的安装包解压，双击运行&lt;img src=&quot;https://s1.ax2x.com/2018/01/24/u54RE.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;
+2. &lt;img src=&quot;https://s1.ax2x.com/2018/01/24/u91oG.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;
+3. 选择keil的安装目录，点击确定&lt;br&gt;
+  &lt;img src=&quot;https://s1.ax2x.com/2018/01/24/uBIJa.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+</description>
+      </item>
+    
+      <item>
+        <title>Download下载</title>
+        <link>https://witeaa.cn/2018/01/24/Download%E4%B8%8B%E8%BD%BD.html</link>
+        <guid isPermaLink="true">https://witeaa.cn/2018/01/24/Download%E4%B8%8B%E8%BD%BD.html</guid>
+        <pubDate>Wed, 24 Jan 2018 00:00:00 +0000</pubDate>
+        <description>&lt;h3 id=&quot;part-2c9a3582460d8d86&quot;&gt;常用软件&lt;/h3&gt;
+
+&lt;p&gt;Altium Designer16                                                                                                                                          | &lt;a href=&quot;http://witeaa-1252834524.file.myqcloud.com/AD16.7z&quot;&gt;Download&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Keil_C51                                                                                                                                                            | &lt;a href=&quot;http://witeaa-1252834524.file.myqcloud.com/Keil_v5.7z&quot;&gt;Download&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Keil &lt;em&gt;MDK&lt;/em&gt;-ARM &lt;em&gt;5.10&lt;/em&gt; uVision5                                                                                                                         | &lt;a href=&quot;http://witeaa-1252834524.file.myqcloud.com/mdk_510.exe&quot;&gt;Download&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;IAR                                                                                                                                                                     | &lt;a href=&quot;http://witeaa-1252834524.file.myqcloud.com/IAR%206.6.zip&quot;&gt;Download&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;STC-isp &lt;em&gt;包含USB转串口驱动CH340/CH341和PL2303&lt;/em&gt;                                                                                   | &lt;a href=&quot;http://www.stcmcudata.com/STCISP/stc-isp-15xx-v6.86I.zip&quot;&gt;Download&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;DEVCPP                                                                                                                                          | &lt;a href=&quot;http://witeaa-1252834524.file.myqcloud.com/devc_zh.rar&quot;&gt;Download&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;part-65433b81c1f&quot;&gt;驱动&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;J-Link v486b&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://witeaa-1252834524.file.myqcloud.com/Setup_JLinkARM_V486b.exe&quot;&gt;windows7/10&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;part-b8a9997&quot;&gt;库&lt;/h3&gt;
+
+&lt;p&gt;山外K60参考代码V5.3                                                                                                                                     | &lt;a href=&quot;http://witeaa-1252834524.file.myqcloud.com/%E5%B1%B1%E5%A4%96K60%E5%8F%82%E8%80%83%E4%BB%A3%E7%A0%81V5.3%EF%BC%88%E6%94%AF%E6%8C%81FX%E3%80%81FN%E5%92%8CDNZ%EF%BC%89.exe&quot;&gt;Download&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;AD封装库                                                                                                                                                          | &lt;a href=&quot;http://witeaa-1252834524.file.myqcloud.com/AD_lib.zip&quot;&gt;Download&lt;/a&gt;&lt;/p&gt;
+</description>
+      </item>
+    
+  </channel>
+</rss>

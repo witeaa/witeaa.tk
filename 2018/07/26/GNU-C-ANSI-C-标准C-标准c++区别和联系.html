@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GNU C 、ANSI C、标准C、标准c++区别和联系 - WIT电子爱好者协会</title>
+    <meta name="author"  content="WIT电子爱好者协会">
+    <meta name="description" content="GNU C 、ANSI C、标准C、标准c++区别和联系">
+    <meta name="keywords"  content="C/C++">
+    <!-- Open Graph -->
+    <meta property="og:title" content="GNU C 、ANSI C、标准C、标准c++区别和联系 - WIT电子爱好者协会">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://witeaa.cn/2018/07/26/GNU-C-ANSI-C-%E6%A0%87%E5%87%86C-%E6%A0%87%E5%87%86c++%E5%8C%BA%E5%88%AB%E5%92%8C%E8%81%94%E7%B3%BB.html">
+    <meta property="og:description" content="很高兴能在这里与你分享对技术的思考">
+    <meta property="og:site_name" content="WIT电子爱好者协会">
+    <link rel="stylesheet" href="//cdn.staticfile.org/normalize/6.0.0/normalize.min.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_roc50gemkxpw4s4i.css">
+    <link rel="stylesheet" href="/assets/css/github-markdown.css">
+    <link rel="stylesheet" href="/assets/css/prism.css">
+    <link rel="stylesheet" href="/assets/css/share.min.css">
+    <link rel="stylesheet" href="/assets/css/app.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+	
+	<!--
+Author: Ray-Eldath
+refer to:
+ - http://docs.mathjax.org/en/latest/options/index.html
+-->
+
+	<script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+	
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+		jax: ["input/TeX", "output/HTML-CSS"],
+		tex2jax: {
+			inlineMath: [ ["$", "$"] ],
+			displayMath: [ ["$$", "$$"] ],
+			skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+		},
+		"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+      });
+    </script>
+
+	
+    <!--
+Author: Ray-Eldath
+-->
+<style>
+    .markdown-body .anchor{
+        float: left;
+        margin-top: -8px;
+        margin-left: -20px;
+        padding-right: 4px;
+        line-height: 1;
+        opacity: 0;
+    }
+    
+    .markdown-body .anchor .anchor-icon{
+        font-size: 15px
+    }
+</style>
+<script>
+    $(document).ready(function() {
+        let nodes = document.querySelector(".markdown-body").querySelectorAll("h1,h2,h3")
+        for(let node of nodes) {
+            var anchor = document.createElement("a")
+            var anchorIcon = document.createElement("i")
+            anchorIcon.setAttribute("class", "fa fa-anchor fa-lg anchor-icon")
+            anchorIcon.setAttribute("aria-hidden", true)
+            anchor.setAttribute("class", "anchor")
+            anchor.setAttribute("href", "#" + node.getAttribute("id"))
+            
+            anchor.onmouseover = function() {
+                this.style.opacity = "0.4"
+            }
+            
+            anchor.onmouseout = function() {
+                this.style.opacity = "0"
+            }
+            
+            anchor.appendChild(anchorIcon)
+            node.appendChild(anchor)
+        }
+    })
+</script>
+</head>
+
+
+<body>
+  <!--[if lt IE 10]>
+<div class="alert-danger" role="alert">你的浏览器实在太太太旧了，放学别走，升级完浏览器再说！<a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a></div>
+<![endif]-->
+  <input id="nm-switch" type="hidden" value="true"> <header class="g-header">
+    <div class="g-logo">
+      <a href="/"></a>
+    </div>
+    <i id="menu-toggle" class="iconfont icon-menu"></i>
+    <nav class="g-nav">
+        <ul>
+            
+            <li><a href="/">home</a></li>
+            
+            <li><a href="/tags.html">tags</a></li>
+            
+            <li><a href="https://github.com/witeaa/Witeaa-Textbook/wiki">协会教材</a></li>
+            
+        </ul>
+    </nav>
+</header>
+
+
+  <header class="g-banner post-header post-pattern-circuitBoard bgcolor-default " data-theme="default">
+    <div class="post-wrapper">
+      <div class="post-tags">
+        
+          
+            <a href="https://witeaa.cn/tags#C/C++" class="post-tag">C/C++</a>
+          
+        
+      </div>
+      <h1>GNU C 、ANSI C、标准C、标准c++区别和联系</h1>
+      <div class="post-meta">
+        <span class="post-meta-item"><i class="iconfont icon-author"></i><a href="https://witeaa.cn" target="_blank" rel="author">WIT电子爱好者协会</a></></span>
+        <time class="post-meta-item" datetime="18-07-26"><i class="iconfont icon-date"></i>26 Jul 2018</time>
+      </div>
+    </div>
+    
+    <div class="filter"></div>
+      <div class="post-cover" style="background: url('https://i.loli.net/2018/07/26/5b594a66a963b.jpg') center no-repeat; background-size: cover;"></div>
+    
+  </header>
+
+  <div class="post-content visible">
+    
+
+    <article class="markdown-body">
+      <p>GNU计划，又称革奴计划，是由Richard Stallman在1983年9月27日公开发起的。它的目标是创建一套完全自由的操作系统。它在编写linux的时候自己制作了一个标准成为 GNU C标准。ANSI 美国国家标准协会,它对C做的标准ANSI C标准后来被国际标准协会接收成为 标准C 所以 ANSI C 和标准C是一个概念</p>
+
+<h2 id="ansi-c-c"><em>ANSI C</em>和<em>标准C++</em>的差别</h2>
+
+<p>这里的ANSI C指的是最新的标准－C99</p>
+
+<p>1、ANSI C不支持引用</p>
+
+<p>2、ANSI C不支持函数重载</p>
+
+<p>3、ANSI C多了两个整型（long long、unsigned long long），不过最新的C++编译器已经支持这两种整型</p>
+
+<p>4、ANSI C不支持C++中的一个变量初始化方式，例如：int a(8);</p>
+
+<p>5、ANSI C声明结构时必须使用struct关键字，而标准C++不需要</p>
+
+<p>6、ANSI C标准库中的一些头文件，在标准C++中有了新的名称，例如ctime、cstring、climits、cfloat、cctype，有些文件不仅是名称上的变化</p>
+
+<p>7、ANSI C不支持名称空间</p>
+
+<p>8、ANSI C不包含bool类型，以及true和false关键字</p>
+
+<p>9、声明函数时，参数为空的含义不同。在ANSI C中表示接受任意个数的参数，而在标准C++中表示不接受参数</p>
+
+<p>10、ANSI C不支持内联函数</p>
+
+<p>11、ASNI C不支持默认参数</p>
+
+<p>12、ANSI C不支持可用于全局变量的作用域解析操作符（：：）</p>
+
+<p>13、使用const定义的全局常量在ANSI C中具有外部链接性，在标准C++中具有内部链接性，所以在标准C++中声明外部链接性的全局常量必须使用extern，例如：extern const int a = 10;</p>
+
+<h2 id="gnu-c-ansi-c"><em>GNU C</em>比*<em>ANSI C</em>扩展的地方</h2>
+
+<h3 id="part-b5a651dd6b81cdcb">允许零长度数组</h3>
+
+<p>GNU C允许零长度数组，在定义变长对象的头结构时，这个特性非常有用。</p>
+<div class="highlight"><pre><code class="language-c" data-lang="c"><span class="k">struct</span> <span class="n">var_data</span>
+
+<span class="p">{</span>
+
+      <span class="kt">int</span> <span class="n">len</span><span class="p">;</span>
+
+      <span class="kt">char</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+
+<span class="p">};</span>
+
+        <span class="kt">char</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="err">仅仅意味着程序中通过</span><span class="n">var_data</span><span class="err">的结构体实例的</span><span class="n">data</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="err">成员可以访问</span><span class="n">len</span><span class="err">之后的第</span><span class="n">index</span><span class="err">个地址，并没有为</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="err">分配内存</span><span class="p">.</span>
+   <span class="err">假设</span><span class="k">struct</span> <span class="n">var_data</span><span class="err">的数据域保存在</span><span class="k">struct</span> <span class="n">var_data</span><span class="err">紧接着的内存区域，通过如下代码可以遍历这些数据：</span>
+
+<span class="k">struct</span> <span class="n">var_data</span> <span class="n">s</span><span class="p">;</span>
+
+<span class="p">...</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">s</span><span class="p">.</span><span class="n">len</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+
+<span class="p">{</span>
+
+    <span class="n">printf</span><span class="p">(</span><span class="s">"%02x"</span><span class="p">,</span><span class="n">s</span><span class="p">.</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="case">case范围</h3>
+<div class="highlight"><pre><code class="language-c" data-lang="c"><span class="n">GNU</span> <span class="n">C</span> <span class="err">支持</span><span class="k">case</span> <span class="n">x</span><span class="p">...</span><span class="n">y</span> <span class="err">这样的语法，区间</span><span class="p">[</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">]</span><span class="err">的数都会满足这个</span><span class="k">case</span><span class="err">的条件</span>
+
+<span class="k">switch</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+
+<span class="err">{</span>
+
+      <span class="k">case</span> <span class="sc">'0'</span><span class="p">...</span><span class="sc">'9'</span><span class="p">:</span> <span class="n">c</span><span class="o">-=</span><span class="sc">'0'</span><span class="p">;</span>
+
+      <span class="k">break</span><span class="p">;</span>
+
+      <span class="k">case</span> <span class="sc">'a'</span><span class="p">...</span><span class="sc">'f'</span><span class="p">:</span> <span class="n">c</span><span class="o">-=</span><span class="sc">'a'</span><span class="o">-</span><span class="mi">10</span><span class="p">;</span>
+
+      <span class="k">break</span><span class="p">;</span>
+
+      <span class="k">case</span> <span class="sc">'A'</span><span class="p">...</span><span class="sc">'F'</span><span class="p">:</span> <span class="n">c</span><span class="o">-=</span><span class="sc">'A'</span><span class="o">-</span><span class="mi">10</span><span class="p">;</span>
+
+      <span class="k">break</span><span class="p">;</span>
+
+<span class="err">}</span>
+</code></pre></div>
+<h3 id="part-c5057bcb6eb90d87">语句表达式</h3>
+<div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="n">GNU</span> <span class="n">C</span><span class="err">把包含在括号里的复合语句看做是一个表达式，称为语句表达式，它可以出现在任何允许表达式的地方。我们可以在语句表达式中使用原本只能在复合语句中使用的循环变量、局部变量等，例如</span>
+
+<span class="cp">#define min_t(type,x,y) /
+</span>
+<span class="p">({</span><span class="n">type</span> <span class="n">__x</span><span class="o">=</span><span class="p">(</span><span class="n">x</span><span class="p">);</span> <span class="n">type</span> <span class="n">__y</span><span class="o">=</span><span class="p">(</span><span class="n">y</span><span class="p">);</span><span class="n">__x</span><span class="o">&lt;</span><span class="n">__y</span><span class="o">?</span><span class="n">__x</span><span class="o">:</span><span class="n">__y</span><span class="p">})</span>
+
+<span class="kt">int</span> <span class="n">ia</span><span class="p">,</span><span class="n">ib</span><span class="p">,</span><span class="n">mini</span><span class="p">;</span>
+
+<span class="n">mini</span><span class="o">=</span><span class="n">min_t</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="n">ia</span><span class="p">,</span><span class="n">ib</span><span class="p">);</span>
+
+<span class="err">这样，因为重新定义了</span><span class="n">__x</span><span class="err">和</span><span class="n">__y</span><span class="err">这两个局部变量，所以上述方法定义的宏将不会有副作用。在标准</span><span class="n">C</span><span class="err">中，对应的宏通常会有副作用：</span>
+
+<span class="cp">#define min(x,y) ((x)&lt;(y)?(x):(y))
+</span>
+<span class="err">而代码</span><span class="n">min</span><span class="p">(</span><span class="o">++</span><span class="n">ia</span><span class="p">,</span><span class="o">++</span><span class="n">ib</span><span class="p">)</span><span class="err">将会被展开为</span>
+
+<span class="p">((</span><span class="o">++</span><span class="n">ia</span><span class="p">)</span><span class="o">&lt;</span><span class="p">(</span><span class="o">++</span><span class="n">ib</span><span class="p">)</span><span class="o">?</span><span class="p">(</span><span class="o">++</span><span class="n">ia</span><span class="p">)</span><span class="o">:</span><span class="p">(</span><span class="o">++</span><span class="n">ib</span><span class="p">))</span> <span class="err">传入宏的参数会被增加两次。</span>
+</code></pre></div>
+<h3 id="typeof">typeof关键字</h3>
+<div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="n">typeof</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="err">语句可以获得</span><span class="n">x</span><span class="err">的类型，因此，我们可以借助</span><span class="n">typeof</span><span class="err">重新定义第</span><span class="mi">3</span><span class="err">条提到的</span><span class="n">min_t</span><span class="err">这个宏</span>
+
+<span class="cp">#define min(x,y) /
+</span>
+<span class="p">({</span> <span class="o">/</span>
+
+      <span class="k">const</span> <span class="n">typeof</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="n">_x</span><span class="o">=</span><span class="p">(</span><span class="n">x</span><span class="p">);</span><span class="o">/</span>
+
+      <span class="k">const</span> <span class="n">typeof</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="n">_y</span><span class="o">=</span><span class="p">(</span><span class="n">y</span><span class="p">);</span><span class="o">/</span>
+
+      <span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">_x</span><span class="o">==&amp;</span><span class="n">_y</span><span class="p">);</span><span class="o">/</span>
+
+       <span class="n">_x</span><span class="o">&lt;</span><span class="n">_y</span> <span class="o">?</span> <span class="n">_x</span><span class="o">:</span> <span class="n">_y</span> <span class="p">;</span> <span class="p">})</span>
+
+<span class="err">我们不需要像第三条时那样传一个</span><span class="n">type</span><span class="err">进去，因为通过</span><span class="n">typeof</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="err">可以得到</span><span class="n">type</span><span class="err">。</span>
+
+<span class="err">代码</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">_x</span><span class="o">==&amp;</span><span class="n">_y</span><span class="p">);</span><span class="err">的作用是检查</span><span class="n">_x</span><span class="err">和</span><span class="n">_y</span><span class="err">的类型是否一致。</span>
+
+</code></pre></div>
+<h3 id="part-39b49c7a92b95cbc">可变参数的宏</h3>
+<div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="err">标准</span><span class="n">C</span><span class="err">只支持可变参数的函数，意味着函数的参数可以是不固定的</span>
+
+<span class="err">例如</span><span class="n">printf</span><span class="p">()</span><span class="err">函数的原型是</span>
+
+<span class="kt">int</span> <span class="nf">printf</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">format</span> <span class="p">[,</span><span class="n">argument</span><span class="p">]...)</span>
+
+<span class="err">而在</span><span class="n">GNU</span> <span class="n">C</span><span class="err">中，宏也可以接受可变数目的参数，例如</span>
+
+<span class="cp">#define pr_debug(fmt,arg...) printk(fmt,##arg)
+</span>
+<span class="err">这里</span><span class="n">arg</span><span class="err">表示其余的参数可以是零个或多个，这些参数以及参数之间的逗号构成</span><span class="n">arg</span><span class="err">的值，</span>
+
+<span class="err">在宏扩展时替换</span><span class="n">arg</span> <span class="err">，例如</span>
+
+<span class="n">pr_debug</span><span class="p">(</span><span class="s">"%s:%d"</span><span class="p">,</span><span class="n">filename</span><span class="p">,</span><span class="n">line</span><span class="p">);</span>
+
+<span class="err">被扩展为</span>
+
+<span class="n">printk</span><span class="p">(</span><span class="s">"%s:%d"</span><span class="p">,</span><span class="n">filename</span><span class="p">,</span><span class="n">line</span><span class="p">);</span>
+
+<span class="err">使用##的原因是为了处理</span><span class="n">arg</span><span class="err">不代表任何参数的情况，这时候，前面的逗号就变得多余了。</span>
+
+<span class="err">使用##之后，</span><span class="n">GNU</span> <span class="n">C</span><span class="err">预处理器会丢弃前面的逗号，这样代码</span>
+
+<span class="n">pr_debug</span><span class="p">(</span><span class="s">"success!/n"</span><span class="p">)</span> <span class="err">会被正确扩展为</span> <span class="n">printk</span><span class="p">(</span><span class="s">"success!/n"</span><span class="p">)</span>
+
+<span class="err">而不是</span> <span class="n">printk</span><span class="p">(</span><span class="s">"success!/n"</span><span class="p">,);</span>
+
+</code></pre></div>
+<h3 id="part-2cc3171a21a4bf65">标号元素</h3>
+<div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="err">标准</span><span class="n">c</span><span class="err">要求数组或结构体的初始化值必须以固定的顺序出现，在</span><span class="n">GNU</span> <span class="n">C</span><span class="err">中，通过指定索引或结构体成员名，允许初始化值得以任意顺序出现。</span>
+
+<span class="err">指定数组索引的方法是在初始化值前添加</span> <span class="p">[</span><span class="n">INDEX</span><span class="p">]</span><span class="o">=</span> <span class="err">，当然也可以用</span> <span class="p">[</span><span class="n">FIRST</span><span class="p">...</span><span class="n">LAST</span><span class="p">]</span><span class="o">=</span> <span class="err">的形式指定一个范围。例如下面的代码定义一个数组，并把其中的所有元素赋值为</span><span class="mi">0</span><span class="err">：</span>
+
+<span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">data</span><span class="p">[</span><span class="n">MAX</span><span class="p">]</span> <span class="o">=</span><span class="p">{[</span><span class="mf">0.</span><span class="p">..</span><span class="n">MAX</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span> <span class="p">};</span>
+<span class="err">下面的代码借助结构体成员名初始化结构体：</span>
+
+<span class="k">struct</span> <span class="n">file_operations</span> <span class="n">DEMO_fops</span> <span class="o">=</span> <span class="p">{</span>
+
+    <span class="n">owner</span> <span class="o">:</span>    <span class="n">THIS_MODULE</span><span class="p">,</span>
+
+    <span class="nl">llseek:</span>      <span class="n">DEMO_llseek</span><span class="p">,</span>
+
+    <span class="nl">read:</span>       <span class="n">DEMO_read</span><span class="p">,</span>
+
+    <span class="nl">write:</span>       <span class="n">DEMO_write</span><span class="p">,</span>
+
+    <span class="nl">ioctl:</span>        <span class="n">DEMO_ioctl</span><span class="p">,</span>
+
+    <span class="nl">open:</span>        <span class="n">DEMO_open</span><span class="p">,</span>
+
+    <span class="nl">release:</span>   <span class="n">DEMO_release</span><span class="p">,</span>
+
+<span class="p">};</span>
+
+<span class="err">但是</span><span class="n">Linux</span> <span class="mf">2.6</span><span class="err">还是推荐采用标准</span><span class="n">C</span><span class="err">的方式，如下</span>
+
+<span class="k">struct</span> <span class="n">file_operations</span> <span class="n">DEMO_fops</span> <span class="o">=</span> <span class="p">{</span>
+
+    <span class="p">.</span><span class="n">owner</span> <span class="o">=</span>    <span class="n">THIS_MODULE</span><span class="p">,</span>
+
+    <span class="p">.</span><span class="n">llseek</span> <span class="o">=</span>   <span class="n">DEMO_llseek</span><span class="p">,</span>
+
+    <span class="p">.</span><span class="n">read</span> <span class="o">=</span>     <span class="n">DEMO_read</span><span class="p">,</span>
+
+    <span class="p">.</span><span class="n">write</span> <span class="o">=</span>    <span class="n">DEMO_write</span><span class="p">,</span>
+
+    <span class="p">.</span><span class="n">ioctl</span> <span class="o">=</span>    <span class="n">DEMO_ioctl</span><span class="p">,</span>
+
+    <span class="p">.</span><span class="n">open</span> <span class="o">=</span>     <span class="n">DEMO_open</span><span class="p">,</span>
+
+    <span class="p">.</span><span class="n">release</span> <span class="o">=</span> <span class="n">DEMO_release</span><span class="p">,</span>
+
+<span class="p">};</span>
+</code></pre></div>
+<h3 id="part-ccce67911e5f326b">当前函数名</h3>
+<div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="n">GUN</span> <span class="n">C</span><span class="err">预定义了两个标识符保存当前的函数名，</span><span class="n">__FUNCTION__</span><span class="err">保存函数在源码中的名字，</span>
+
+<span class="n">__PRETTY_FUNCTION__</span><span class="err">保存带语言特色的名字。在</span><span class="n">c</span><span class="err">函数中，这两个名字是相同的。</span>
+<span class="kt">void</span> <span class="nf">example</span><span class="p">()</span>
+
+<span class="p">{</span>
+
+      <span class="n">printf</span><span class="p">(</span><span class="s">"This is function: %s "</span><span class="p">,</span><span class="n">__FUNCTION__</span><span class="p">);</span>
+
+<span class="p">}</span>
+<span class="err">代码中的</span><span class="n">__FUNCTION__</span><span class="err">意味着字符串</span><span class="s">"example"</span>
+</code></pre></div>
+<h3 id="part-727e10b2fe0fb951">特殊属性声明</h3>
+<div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="n">GNU</span> <span class="n">C</span><span class="err">允许声明函数、变量和类型的特殊属性，以便进行手工的代码优化和定制代码检查的方法。指定一个声明的属性，只需要在申明后添加</span> <span class="n">__attribute__</span><span class="p">((</span><span class="n">ATTRIBUTE</span><span class="p">))</span>
+
+<span class="err">其中</span><span class="n">ATTRIBUTE</span><span class="err">为属性说明，如果存在多个属性，则以逗号分隔。</span><span class="n">GNU</span> <span class="n">C</span><span class="err">支持</span><span class="n">noreturn</span> <span class="n">format</span> <span class="n">section</span> <span class="n">aligned</span> <span class="n">packed</span><span class="err">等十多个属性</span>
+
+<span class="n">noreturn</span><span class="err">属性作用于函数，表示该函数从不返回。这会让编译器优化代码，并消除不必要的的警告信息。例如</span>
+
+<span class="cp">#define ATTRIB_NORET __attribute__ ((noreturn)) ....
+</span>
+<span class="n">asmlinkage</span> <span class="n">NORET_TYPE</span> <span class="kt">void</span> <span class="n">do_exit</span><span class="p">(</span><span class="kt">long</span> <span class="n">error_code</span><span class="p">)</span> <span class="n">ATTRIB_NORET</span><span class="p">;</span>
+
+<span class="n">format</span><span class="err">属性也可用于函数，表示该函数</span><span class="n">printf</span> <span class="n">scanf</span> <span class="err">或</span><span class="n">strftime</span><span class="err">风格的参数，指定</span><span class="n">format</span><span class="err">属性可以让编译器根据格式串检查参数类型。例如：</span>
+
+<span class="n">asmlinkage</span> <span class="kt">int</span> <span class="nf">printk</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">fmt</span><span class="p">,...)</span><span class="o">/</span>
+
+<span class="n">__attribute__</span><span class="p">((</span><span class="n">format</span><span class="p">(</span><span class="n">printf</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)));</span>
+
+<span class="err">详细的可以看</span><span class="n">http</span><span class="o">:</span><span class="c1">//blog.163.com/sunm_lin/blog/static/9192142200741533038695/</span>
+
+<span class="n">unused</span><span class="err">属性作用于函数和变量，表示该函数或变量可能不会被用到，避免编译器产生的警告信息。</span>
+
+<span class="n">aligned</span><span class="err">属性指定结构体、变量、联合体的对齐方式。</span><span class="n">packed</span><span class="err">属性作用于变量和类型，表示压缩结构体，使用最小的内存。</span>
+
+<span class="k">struct</span> <span class="n">examprl_struct</span>
+
+<span class="p">{</span>
+
+      <span class="kt">char</span> <span class="n">a</span><span class="p">;</span>
+
+      <span class="kt">int</span> <span class="n">b</span><span class="p">;</span>
+
+      <span class="kt">long</span> <span class="n">c</span><span class="p">;</span>
+
+<span class="p">}</span><span class="n">__attribute__</span><span class="p">((</span><span class="n">packed</span><span class="p">));</span>
+
+<span class="err">注意，这个</span><span class="n">__attribute__</span><span class="p">((</span><span class="n">packed</span><span class="p">))</span><span class="err">只能用在</span><span class="n">GNU</span> <span class="n">C</span>
+
+</code></pre></div>
+<h3 id="part-2b81bb92dfb51ae3">内建函数</h3>
+<div class="highlight"><pre><code class="language-c++" data-lang="c++"><span class="n">GNU</span> <span class="n">C</span> <span class="err">提供了大量的内建函数，其中很多是标准</span> <span class="n">C</span> <span class="err">库函数的内建版本，例如</span><span class="n">memcpy</span><span class="err">，它们与对应的</span> <span class="n">C</span> <span class="err">库函数功能相同，本文不讨论这类函数，其他内建函数的名字通常以</span> <span class="n">__builtin</span> <span class="err">开始。</span>
+
+<span class="o">*</span> <span class="nf">__builtin_return_address</span> <span class="p">(</span><span class="n">LEVEL</span><span class="p">)</span>
+
+<span class="err">内建函数</span> <span class="n">__builtin_return_address</span> <span class="err">返回当前函数或其调用者的返回地址，参数</span><span class="n">LEVEL</span> <span class="err">指定在栈上搜索框架的个数，</span><span class="mi">0</span> <span class="err">表示当前函数的返回地址，</span><span class="mi">1</span> <span class="err">表示当前函数的调用者的返回地址，依此类推。例如：</span>
+
+<span class="o">++++</span> <span class="n">kernel</span><span class="o">/</span><span class="n">sched</span><span class="p">.</span><span class="n">c</span>
+
+<span class="mi">437</span><span class="o">:</span>                 <span class="n">printk</span><span class="p">(</span><span class="n">KERN_ERR</span> <span class="err">“</span><span class="n">schedule_timeout</span><span class="o">:</span> <span class="n">wrong</span> <span class="n">timeout</span> <span class="err">”</span>
+
+<span class="mi">438</span><span class="o">:</span>                        <span class="err">“</span><span class="n">value</span> <span class="o">%</span><span class="n">lx</span> <span class="n">from</span> <span class="o">%</span><span class="n">p</span><span class="o">/</span><span class="n">n</span><span class="err">”</span><span class="p">,</span> <span class="n">timeout</span><span class="p">,</span>
+
+<span class="mi">439</span><span class="o">:</span>                        <span class="n">__builtin_return_address</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
+
+<span class="o">*</span> <span class="nf">__builtin_constant_p</span><span class="p">(</span><span class="n">EXP</span><span class="p">)</span>
+
+<span class="err">内建函数</span> <span class="n">__builtin_constant_p</span> <span class="err">用于判断一个值是否为编译时常数，如果参数</span> <span class="n">EXP</span> <span class="err">的值是常数，函数返回</span> <span class="mi">1</span><span class="err">，否则返回</span><span class="mi">0</span><span class="err">。例如：</span>
+
+<span class="o">++++</span> <span class="n">include</span><span class="o">/</span><span class="k">asm</span><span class="o">-</span><span class="n">i386</span><span class="o">/</span><span class="n">bitops</span><span class="p">.</span><span class="n">h</span>
+
+<span class="mi">249</span><span class="o">:</span> <span class="err">#</span><span class="n">define</span> <span class="n">test_bit</span><span class="p">(</span><span class="n">nr</span><span class="p">,</span><span class="n">addr</span><span class="p">)</span> <span class="o">/</span>
+
+<span class="mi">250</span><span class="o">:</span> <span class="p">(</span><span class="n">__builtin_constant_p</span><span class="p">(</span><span class="n">nr</span><span class="p">)</span> <span class="o">?</span> <span class="o">/</span>
+
+<span class="mi">251</span><span class="o">:</span> <span class="n">constant_test_bit</span><span class="p">((</span><span class="n">nr</span><span class="p">),(</span><span class="n">addr</span><span class="p">))</span> <span class="o">:</span> <span class="o">/</span>
+
+<span class="mi">252</span><span class="o">:</span> <span class="n">variable_test_bit</span><span class="p">((</span><span class="n">nr</span><span class="p">),(</span><span class="n">addr</span><span class="p">)))</span>
+
+<span class="err">很多计算或操作在参数为常数时有更优化的实现，在</span> <span class="n">GNU</span> <span class="n">C</span> <span class="err">中用上面的方法可以根据参数是否为常数，只编译常数版本或非常数版本，这样既不失通用性，又能在参数是常数时编译出最优化的代码。</span>
+
+<span class="o">*</span> <span class="n">__builtin_expect</span><span class="p">(</span><span class="n">EXP</span><span class="p">,</span> <span class="n">C</span><span class="p">)</span>
+
+<span class="err">内建函数</span> <span class="n">__builtin_expect</span> <span class="err">用于为编译器提供分支预测信息，其返回值是整数表达式</span> <span class="n">EXP</span> <span class="err">的值，</span><span class="n">C</span> <span class="err">的值必须是编译时常数。例如：</span>
+
+<span class="o">++++</span> <span class="n">include</span><span class="o">/</span><span class="n">linux</span><span class="o">/</span><span class="n">compiler</span><span class="p">.</span><span class="n">h</span>
+
+<span class="mi">13</span><span class="o">:</span> <span class="err">#</span><span class="n">define</span> <span class="n">likely</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>       <span class="n">__builtin_expect</span><span class="p">((</span><span class="n">x</span><span class="p">),</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="mi">14</span><span class="o">:</span> <span class="err">#</span><span class="n">define</span> <span class="n">unlikely</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>     <span class="n">__builtin_expect</span><span class="p">((</span><span class="n">x</span><span class="p">),</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="o">++++</span> <span class="n">kernel</span><span class="o">/</span><span class="n">sched</span><span class="p">.</span><span class="n">c</span>
+
+<span class="mi">564</span><span class="o">:</span>         <span class="k">if</span> <span class="p">(</span><span class="n">unlikely</span><span class="p">(</span><span class="n">in_interrupt</span><span class="p">()))</span> <span class="p">{</span>
+
+<span class="mi">565</span><span class="o">:</span>                 <span class="n">printk</span><span class="p">(</span><span class="err">”</span><span class="n">Scheduling</span> <span class="n">in</span> <span class="n">interrupt</span><span class="o">/</span><span class="n">n</span><span class="err">”</span><span class="p">);</span>
+
+<span class="mi">566</span><span class="o">:</span>                 <span class="n">BUG</span><span class="p">();</span>
+
+<span class="mi">567</span><span class="o">:</span>         <span class="p">}</span>
+
+<span class="err">这个内建函数的语义是</span> <span class="n">EXP</span> <span class="err">的预期值是</span> <span class="n">C</span><span class="err">，编译器可以根据这个信息适当地重排语句块的顺序，使程序在预期的情况下有更高的执行效率。上面的例子表示处于中断上下文是很少发生的，第</span> <span class="mi">565</span><span class="o">-</span><span class="mi">566</span> <span class="err">行的目标码可能会放在较远的位置，以保证经常执行的目标码更紧凑。</span>
+</code></pre></div>
+    </article>
+
+    
+    <div class="social-share-wrapper">
+      <div class="social-share"></div>
+    </div>
+    
+  </div>
+
+  <section class="author-detail">
+    <section class="post-footer-item author-card">
+      <div class="avatar">
+        <img src="https://witeaa-1252834524.file.myqcloud.com/images/logobig.png" alt="">
+      </div>
+      <div class="author-name" rel="author">WIT电子爱好者协会</div>
+      <div class="bio">
+        <p>电子爱好者，热爱技术&设计·简单乐观爱创造</p>
+      </div>
+      
+      <ul class="sns-links">
+        
+        <li>
+          <a href="//github.com/witeaa" target="_blank">
+                    <i class="iconfont icon-github"></i>
+                </a>
+        </li>
+        
+      </ul>
+      
+    </section>
+    <section class="post-footer-item read-next">
+      
+      <div class="read-next-item">
+        <a href="/2018/08/20/%E7%94%B5%E5%AD%90%E7%88%B1%E5%A5%BD%E8%80%85.html" class="read-next-link"></a>
+        <section>
+          <span>《电子爱好者》电协入门教材系列</span>
+          <p></p>
+        </section>
+        
+        <div class="filter"></div>
+        <img src="https://i.loli.net/2018/08/13/5b70e9dfd5ddb.png" alt="">
+        
+     </div>
+      
+
+      
+      <div class="read-next-item">
+        <a href="/2018/04/06/STC8%E5%8D%95%E7%89%87%E6%9C%BA%E7%A1%AC%E4%BB%B6IIC.html" class="read-next-link"></a>
+          <section>
+            <span>STC8单片机硬件IIC</span>
+            <p></p>
+          </section>
+          
+      </div>
+      
+    </section>
+  </section>
+
+  <footer class="g-footer">
+  <section>WIT电子爱好者协会 ©
+  
+  
+    2018
+    -
+  
+  2019
+  </section>
+  <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1274266328'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1274266328%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+  <section><a href="http://www.miibeian.gov.cn/state/outPortal/loginPortal.action">晋ICP备19006083号</a></section>
+</footer>
+
+
+  <script src="/assets/js/social-share.min.js"></script>
+  <script>
+    socialShare('.social-share', {
+      sites: [
+        
+          'wechat'
+          ,
+          
+        
+          'github'
+          
+        
+      ],
+      wechatQrcodeTitle: "分享到微信朋友圈",
+      wechatQrcodeHelper: '<p>扫码后点击右上角</p><p>将本文分享至朋友圈</p>'
+    });
+  </script>
+
+  <script>
+    
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document,
+        s = d.createElement('script');
+      s.src = 'http://106.14.165.251:2018/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+
+      (d.head || d.body).appendChild(s);
+    })();
+    
+  </script>
+
+  <script src="/assets/js/prism.js"></script>
+  <script src="/assets/js/index.min.js"></script>
+</body>
+
+</html>

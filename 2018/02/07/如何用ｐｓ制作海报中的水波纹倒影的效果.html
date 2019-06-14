@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>如何用ｐｓ制作海报中的水波纹倒影的效果 - WIT电子爱好者协会</title>
+    <meta name="author"  content="WIT电子爱好者协会">
+    <meta name="description" content="如何用ｐｓ制作海报中的水波纹倒影的效果">
+    <meta name="keywords"  content="PhotoShop">
+    <!-- Open Graph -->
+    <meta property="og:title" content="如何用ｐｓ制作海报中的水波纹倒影的效果 - WIT电子爱好者协会">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://witeaa.cn/2018/02/07/%E5%A6%82%E4%BD%95%E7%94%A8%EF%BD%90%EF%BD%93%E5%88%B6%E4%BD%9C%E6%B5%B7%E6%8A%A5%E4%B8%AD%E7%9A%84%E6%B0%B4%E6%B3%A2%E7%BA%B9%E5%80%92%E5%BD%B1%E7%9A%84%E6%95%88%E6%9E%9C.html">
+    <meta property="og:description" content="很高兴能在这里与你分享对技术的思考">
+    <meta property="og:site_name" content="WIT电子爱好者协会">
+    <link rel="stylesheet" href="//cdn.staticfile.org/normalize/6.0.0/normalize.min.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_roc50gemkxpw4s4i.css">
+    <link rel="stylesheet" href="/assets/css/github-markdown.css">
+    <link rel="stylesheet" href="/assets/css/prism.css">
+    <link rel="stylesheet" href="/assets/css/share.min.css">
+    <link rel="stylesheet" href="/assets/css/app.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+	
+	<!--
+Author: Ray-Eldath
+refer to:
+ - http://docs.mathjax.org/en/latest/options/index.html
+-->
+
+	<script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+	
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+		jax: ["input/TeX", "output/HTML-CSS"],
+		tex2jax: {
+			inlineMath: [ ["$", "$"] ],
+			displayMath: [ ["$$", "$$"] ],
+			skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+		},
+		"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+      });
+    </script>
+
+	
+    <!--
+Author: Ray-Eldath
+-->
+<style>
+    .markdown-body .anchor{
+        float: left;
+        margin-top: -8px;
+        margin-left: -20px;
+        padding-right: 4px;
+        line-height: 1;
+        opacity: 0;
+    }
+    
+    .markdown-body .anchor .anchor-icon{
+        font-size: 15px
+    }
+</style>
+<script>
+    $(document).ready(function() {
+        let nodes = document.querySelector(".markdown-body").querySelectorAll("h1,h2,h3")
+        for(let node of nodes) {
+            var anchor = document.createElement("a")
+            var anchorIcon = document.createElement("i")
+            anchorIcon.setAttribute("class", "fa fa-anchor fa-lg anchor-icon")
+            anchorIcon.setAttribute("aria-hidden", true)
+            anchor.setAttribute("class", "anchor")
+            anchor.setAttribute("href", "#" + node.getAttribute("id"))
+            
+            anchor.onmouseover = function() {
+                this.style.opacity = "0.4"
+            }
+            
+            anchor.onmouseout = function() {
+                this.style.opacity = "0"
+            }
+            
+            anchor.appendChild(anchorIcon)
+            node.appendChild(anchor)
+        }
+    })
+</script>
+</head>
+
+
+<body>
+  <!--[if lt IE 10]>
+<div class="alert-danger" role="alert">你的浏览器实在太太太旧了，放学别走，升级完浏览器再说！<a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a></div>
+<![endif]-->
+  <input id="nm-switch" type="hidden" value="true"> <header class="g-header">
+    <div class="g-logo">
+      <a href="/"></a>
+    </div>
+    <i id="menu-toggle" class="iconfont icon-menu"></i>
+    <nav class="g-nav">
+        <ul>
+            
+            <li><a href="/">home</a></li>
+            
+            <li><a href="/tags.html">tags</a></li>
+            
+            <li><a href="https://github.com/witeaa/Witeaa-Textbook/wiki">协会教材</a></li>
+            
+        </ul>
+    </nav>
+</header>
+
+
+  <header class="g-banner post-header post-pattern-circuitBoard bgcolor-default " data-theme="default">
+    <div class="post-wrapper">
+      <div class="post-tags">
+        
+          
+            <a href="https://witeaa.cn/tags#PhotoShop" class="post-tag">PhotoShop</a>
+          
+        
+      </div>
+      <h1>如何用ｐｓ制作海报中的水波纹倒影的效果</h1>
+      <div class="post-meta">
+        <span class="post-meta-item"><i class="iconfont icon-author"></i><a href="https://witeaa.cn" target="_blank" rel="author">WIT电子爱好者协会</a></></span>
+        <time class="post-meta-item" datetime="18-02-07"><i class="iconfont icon-date"></i>07 Feb 2018</time>
+      </div>
+    </div>
+    
+    <div class="filter"></div>
+      <div class="post-cover" style="background: url('http://bucket1-1252834524.cosgz.myqcloud.com/v2-44e7f21c539f4f4fcb1fb50614b6e982_r.jpg') center no-repeat; background-size: cover;"></div>
+    
+  </header>
+
+  <div class="post-content visible">
+    
+
+    <article class="markdown-body">
+      <p>分两层看待：第一层是物体的倒影，第二层是水波的反光。</p>
+
+<p>第一层比较简单，将毛笔垂直反转，挪到下方，使用滤镜—扭曲—波浪。参数自己视情况调整。</p>
+
+<p><img src="http://bucket1-1252834524.cosgz.myqcloud.com/v2-44e7f21c539f4f4fcb1fb50614b6e982_r.jpg" alt="image"></p>
+
+<p>海报中的波浪主要是横向的，所以最下方“比例”中“垂直”的数值要调小。海报中的倒影相比较原物，失真还是比较大的，所以“波长”短一些，“幅度”大一些。</p>
+
+<p>第二层稍微有点麻烦，需要先制造一层“云”。将前景色设为白色，后景色设为黑色。新建图层，使用滤镜—渲染—云彩，得到一层这样的：</p>
+
+<p><img src="http://bucket1-1252834524.cosgz.myqcloud.com/v2-fe4237b0747cf1f1747136f9de5835fb_r.jpg" alt="image"></p>
+
+<p>然后同样使用波浪。这次的波浪参数会更难调。这次的波长要略微增长一些，波幅更大一些，其他参数视情况调整。</p>
+
+<p><img src="http://bucket1-1252834524.cosgz.myqcloud.com/v2-791a22d6b27fda57acc98f594999dbda_r.jpg" alt="image"></p>
+
+<p>这样的效果就差不多了。记得叠加方式改为滤色，然后添加蒙版调整水波的位置。背景也可以自己丰富以下。左右可以添加一些云雾，云的做法上面也提到了。</p>
+
+<p>我做的作业是这样的：</p>
+
+<p><img src="http://bucket1-1252834524.cosgz.myqcloud.com/v2-57b41bf6896ecd53eee242e6d0d65e18_r.jpg" alt="image"></p>
+
+<p>原文<a href="https://www.zhihu.com/question/265522677/answer/296255631?utm_source=com.miui.notes&utm_medium=social">https://www.zhihu.com/question/265522677/answer/296255631?utm_source=com.miui.notes&amp;utm_medium=social</a></p>
+
+    </article>
+
+    
+    <div class="social-share-wrapper">
+      <div class="social-share"></div>
+    </div>
+    
+  </div>
+
+  <section class="author-detail">
+    <section class="post-footer-item author-card">
+      <div class="avatar">
+        <img src="https://witeaa-1252834524.file.myqcloud.com/images/logobig.png" alt="">
+      </div>
+      <div class="author-name" rel="author">WIT电子爱好者协会</div>
+      <div class="bio">
+        <p>电子爱好者，热爱技术&设计·简单乐观爱创造</p>
+      </div>
+      
+      <ul class="sns-links">
+        
+        <li>
+          <a href="//github.com/witeaa" target="_blank">
+                    <i class="iconfont icon-github"></i>
+                </a>
+        </li>
+        
+      </ul>
+      
+    </section>
+    <section class="post-footer-item read-next">
+      
+      <div class="read-next-item">
+        <a href="/2018/02/09/%E7%99%BE%E5%BA%A6%E4%BA%91%E7%9A%84%E9%93%BE%E6%8E%A5%E4%B8%8D%E5%AD%98%E5%9C%A8%E6%88%96%E5%A4%B1%E6%95%88%E6%80%8E%E4%B9%88%E7%A0%B4.html" class="read-next-link"></a>
+        <section>
+          <span>百度云的“链接不存在或失效”怎么破?</span>
+          <p>相信大家不管是领取干货资料还是通过百度云发送文档给伙伴，都会碰到以下问题：</p>
+        </section>
+        
+        <div class="filter"></div>
+        <img src="http://bucket1-1252834524.cosgz.myqcloud.com/v2-bbcbfef0b0c43e819385b049a8a7d82e_r.jpg" alt="">
+        
+     </div>
+      
+
+      
+      <div class="read-next-item">
+        <a href="/2018/02/06/%E6%9C%80%E8%A0%A2%E5%AF%86%E7%A0%81%E6%8E%92%E8%A1%8C%E6%A6%9C-%E7%9C%8B%E7%9C%8B%E4%BD%A0%E7%9A%84%E5%AF%86%E7%A0%81%E5%9C%A8%E4%B8%8D%E5%9C%A8%E4%B8%8A%E9%9D%A2.html" class="read-next-link"></a>
+          <section>
+            <span>最蠢密码排行榜 看看你的密码在不在上面</span>
+            <p>很多人为了省事、好记，会把密码设置的非常简单，甚至有些心大的人更是把所有平台账号密码都设置成一样的， 但是殊不知，...</p>
+          </section>
+          
+          <div class="filter"></div>
+          <img src="http://bucket1-1252834524.cosgz.myqcloud.com/v2-095c38d38e9a4aa774dcda8b09880878_hd.jpg" alt="">
+          
+      </div>
+      
+    </section>
+  </section>
+
+  <footer class="g-footer">
+  <section>WIT电子爱好者协会 ©
+  
+  
+    2018
+    -
+  
+  2019
+  </section>
+  <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1274266328'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1274266328%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+  <section><a href="http://www.miibeian.gov.cn/state/outPortal/loginPortal.action">晋ICP备19006083号</a></section>
+</footer>
+
+
+  <script src="/assets/js/social-share.min.js"></script>
+  <script>
+    socialShare('.social-share', {
+      sites: [
+        
+          'wechat'
+          ,
+          
+        
+          'github'
+          
+        
+      ],
+      wechatQrcodeTitle: "分享到微信朋友圈",
+      wechatQrcodeHelper: '<p>扫码后点击右上角</p><p>将本文分享至朋友圈</p>'
+    });
+  </script>
+
+  <script>
+    
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document,
+        s = d.createElement('script');
+      s.src = 'http://106.14.165.251:2018/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+
+      (d.head || d.body).appendChild(s);
+    })();
+    
+  </script>
+
+  <script src="/assets/js/prism.js"></script>
+  <script src="/assets/js/index.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STC8单片机硬件IIC - WIT电子爱好者协会</title>
+    <meta name="author"  content="WIT电子爱好者协会">
+    <meta name="description" content="STC8单片机硬件IIC">
+    <meta name="keywords"  content="STC8">
+    <!-- Open Graph -->
+    <meta property="og:title" content="STC8单片机硬件IIC - WIT电子爱好者协会">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://witeaa.cn/2018/04/06/STC8%E5%8D%95%E7%89%87%E6%9C%BA%E7%A1%AC%E4%BB%B6IIC.html">
+    <meta property="og:description" content="很高兴能在这里与你分享对技术的思考">
+    <meta property="og:site_name" content="WIT电子爱好者协会">
+    <link rel="stylesheet" href="//cdn.staticfile.org/normalize/6.0.0/normalize.min.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_roc50gemkxpw4s4i.css">
+    <link rel="stylesheet" href="/assets/css/github-markdown.css">
+    <link rel="stylesheet" href="/assets/css/prism.css">
+    <link rel="stylesheet" href="/assets/css/share.min.css">
+    <link rel="stylesheet" href="/assets/css/app.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+	
+	<!--
+Author: Ray-Eldath
+refer to:
+ - http://docs.mathjax.org/en/latest/options/index.html
+-->
+
+	<script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+	
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+		jax: ["input/TeX", "output/HTML-CSS"],
+		tex2jax: {
+			inlineMath: [ ["$", "$"] ],
+			displayMath: [ ["$$", "$$"] ],
+			skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+		},
+		"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+      });
+    </script>
+
+	
+    <!--
+Author: Ray-Eldath
+-->
+<style>
+    .markdown-body .anchor{
+        float: left;
+        margin-top: -8px;
+        margin-left: -20px;
+        padding-right: 4px;
+        line-height: 1;
+        opacity: 0;
+    }
+    
+    .markdown-body .anchor .anchor-icon{
+        font-size: 15px
+    }
+</style>
+<script>
+    $(document).ready(function() {
+        let nodes = document.querySelector(".markdown-body").querySelectorAll("h1,h2,h3")
+        for(let node of nodes) {
+            var anchor = document.createElement("a")
+            var anchorIcon = document.createElement("i")
+            anchorIcon.setAttribute("class", "fa fa-anchor fa-lg anchor-icon")
+            anchorIcon.setAttribute("aria-hidden", true)
+            anchor.setAttribute("class", "anchor")
+            anchor.setAttribute("href", "#" + node.getAttribute("id"))
+            
+            anchor.onmouseover = function() {
+                this.style.opacity = "0.4"
+            }
+            
+            anchor.onmouseout = function() {
+                this.style.opacity = "0"
+            }
+            
+            anchor.appendChild(anchorIcon)
+            node.appendChild(anchor)
+        }
+    })
+</script>
+</head>
+
+
+<body>
+  <!--[if lt IE 10]>
+<div class="alert-danger" role="alert">你的浏览器实在太太太旧了，放学别走，升级完浏览器再说！<a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a></div>
+<![endif]-->
+  <input id="nm-switch" type="hidden" value="true"> <header class="g-header">
+    <div class="g-logo">
+      <a href="/"></a>
+    </div>
+    <i id="menu-toggle" class="iconfont icon-menu"></i>
+    <nav class="g-nav">
+        <ul>
+            
+            <li><a href="/">home</a></li>
+            
+            <li><a href="/tags.html">tags</a></li>
+            
+            <li><a href="https://github.com/witeaa/Witeaa-Textbook/wiki">协会教材</a></li>
+            
+        </ul>
+    </nav>
+</header>
+
+
+  <header class="g-banner post-header post-pattern-circuitBoard bgcolor-default post-no-cover" data-theme="default">
+    <div class="post-wrapper">
+      <div class="post-tags">
+        
+          
+            <a href="https://witeaa.cn/tags#STC8" class="post-tag">STC8</a>
+          
+        
+      </div>
+      <h1>STC8单片机硬件IIC</h1>
+      <div class="post-meta">
+        <span class="post-meta-item"><i class="iconfont icon-author"></i><a href="https://witeaa.cn" target="_blank" rel="author">WIT电子爱好者协会</a></></span>
+        <time class="post-meta-item" datetime="18-04-06"><i class="iconfont icon-date"></i>06 Apr 2018</time>
+      </div>
+    </div>
+    
+  </header>
+
+  <div class="post-content visible">
+    
+
+    <article class="markdown-body">
+      <hr>
+
+<ol>
+<li> IIC功能脚切换寄存器</li>
+</ol>
+
+<p><img src="https://bucket1-1252834524.picgz.myqcloud.com/upload/131674694471437914.png" alt=""></p>
+
+<p><img src="https://bucket1-1252834524.picgz.myqcloud.com/upload/131674695936943036.png" alt=""></p>
+
+<ol>
+<li>IIC配置寄存器</li>
+</ol>
+
+<p><img src="https://bucket1-1252834524.picgz.myqcloud.com/upload/131674698352917195.png" alt=""></p>
+
+<p>MSSPEED[6:1]:IIC总线速度（等待时钟数）</p>
+
+<p><img src="https://bucket1-1252834524.picgz.myqcloud.com/upload/131674699837917373.png" alt=""></p>
+
+<p><img src="https://bucket1-1252834524.picgz.myqcloud.com/upload/131674700820522342.png" alt=""></p>
+
+<ol>
+<li>IIC主机控制寄存器</li>
+</ol>
+
+<p><img src="https://bucket1-1252834524.picgz.myqcloud.com/upload/131674702005262273.png" alt=""></p>
+
+<p><img src="https://bucket1-1252834524.picgz.myqcloud.com/upload/131674705929026038.png" alt=""></p>
+
+<ol>
+<li>示例代码</li>
+</ol>
+<div class="highlight"><pre><code class="language-c" data-lang="c"> <span class="cp">#include "STC8.h"
+</span> <span class="cp">#include "intrins.h"
+</span>
+ <span class="cp">#define obSDA =P14;
+</span> <span class="cp">#define obSCL =P15;
+</span>
+ <span class="cp">#define OBIIC_Wait() while(!(I2CMSST&amp;0x40));\
+                     I2CMSST &amp;= ~0x40
+</span>
+ <span class="cp">#define OBIIC_Start() I2CMSCR = 0x01; OBIIC_Wait()
+</span>
+ <span class="cp">#define OBIIC_SendData(Data) I2CTXD = Data; I2CMSCR &gt; = 0x02; OBIIC_Wait()
+</span>
+ <span class="cp">#define OBIIC_RecvACK() I2CMSCR = 0x03;OBIIC_Wait()
+</span>
+ <span class="cp">#define OBIIC_SendACK() I2CMSST = 0x00;I2CMSCR = 0x05;OBIIC_Wait()
+</span>
+ <span class="cp">#define OBIIC_SendNAK() I2CMSST = 0x01;I2CMSCR = 0x05;OBIIC_Wait()
+</span>
+ <span class="cp">#define OBIIC_Stop() I2CMSCR = 0x06;OBIIC_Wait()
+</span>
+
+ <span class="kt">void</span> <span class="nf">delay</span><span class="p">();</span>
+ <span class="k">extern</span> <span class="kt">char</span> <span class="nf">OBIIC_RecvData</span><span class="p">();</span>
+
+</code></pre></div>
+<p>在main函数里配置寄存器以启用硬件IIC (iic功能脚可以自己设置，并将P_SW2的最高位置1)</p>
+<div class="highlight"><pre><code class="language-c" data-lang="c">    <span class="n">P_SW2</span><span class="o">=</span><span class="mh">0xb0</span><span class="p">;</span> 
+    <span class="n">I2CCFG</span><span class="o">=</span><span class="mh">0xe0</span><span class="p">;</span>
+    <span class="n">I2CMSST</span><span class="o">=</span><span class="mh">0x00</span><span class="p">;</span>
+</code></pre></div>
+<p>实例代码下载（暂不提供外网下载）<br>
+<a href="http://pan.witeaa.tk/index.php?share/folder&user=1&sid=GvheCgzX">内网高速下载</a> </p>
+
+    </article>
+
+    
+    <div class="social-share-wrapper">
+      <div class="social-share"></div>
+    </div>
+    
+  </div>
+
+  <section class="author-detail">
+    <section class="post-footer-item author-card">
+      <div class="avatar">
+        <img src="https://witeaa-1252834524.file.myqcloud.com/images/logobig.png" alt="">
+      </div>
+      <div class="author-name" rel="author">WIT电子爱好者协会</div>
+      <div class="bio">
+        <p>电子爱好者，热爱技术&设计·简单乐观爱创造</p>
+      </div>
+      
+      <ul class="sns-links">
+        
+        <li>
+          <a href="//github.com/witeaa" target="_blank">
+                    <i class="iconfont icon-github"></i>
+                </a>
+        </li>
+        
+      </ul>
+      
+    </section>
+    <section class="post-footer-item read-next">
+      
+      <div class="read-next-item">
+        <a href="/2018/07/26/GNU-C-ANSI-C-%E6%A0%87%E5%87%86C-%E6%A0%87%E5%87%86c++%E5%8C%BA%E5%88%AB%E5%92%8C%E8%81%94%E7%B3%BB.html" class="read-next-link"></a>
+        <section>
+          <span>GNU C 、ANSI C、标准C、标准c++区别和联系</span>
+          <p>GNU计划，又称革奴计划，是由Richard Stallman在1983年9月27日公开发起的。它的目标是创建一套...</p>
+        </section>
+        
+        <div class="filter"></div>
+        <img src="https://i.loli.net/2018/07/26/5b594a66a963b.jpg" alt="">
+        
+     </div>
+      
+
+      
+      <div class="read-next-item">
+        <a href="/2018/03/18/%E6%B0%B4%E5%A3%B6%E7%BB%B4%E4%BF%AE.html" class="read-next-link"></a>
+          <section>
+            <span>水壶维修</span>
+            <p>  </p>
+          </section>
+          
+          <div class="filter"></div>
+          <img src="https://bucket1-1252834524.picgz.myqcloud.com/upload/131658541258891349.jpg" alt="">
+          
+      </div>
+      
+    </section>
+  </section>
+
+  <footer class="g-footer">
+  <section>WIT电子爱好者协会 ©
+  
+  
+    2018
+    -
+  
+  2019
+  </section>
+  <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1274266328'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1274266328%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+  <section><a href="http://www.miibeian.gov.cn/state/outPortal/loginPortal.action">晋ICP备19006083号</a></section>
+</footer>
+
+
+  <script src="/assets/js/social-share.min.js"></script>
+  <script>
+    socialShare('.social-share', {
+      sites: [
+        
+          'wechat'
+          ,
+          
+        
+          'github'
+          
+        
+      ],
+      wechatQrcodeTitle: "分享到微信朋友圈",
+      wechatQrcodeHelper: '<p>扫码后点击右上角</p><p>将本文分享至朋友圈</p>'
+    });
+  </script>
+
+  <script>
+    
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document,
+        s = d.createElement('script');
+      s.src = 'http://106.14.165.251:2018/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+
+      (d.head || d.body).appendChild(s);
+    })();
+    
+  </script>
+
+  <script src="/assets/js/prism.js"></script>
+  <script src="/assets/js/index.min.js"></script>
+</body>
+
+</html>

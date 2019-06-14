@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>告别DEVcpp 使用VScode+TDM-GCC搭建C&C++开发环境 - WIT电子爱好者协会</title>
+    <meta name="author"  content="WIT电子爱好者协会">
+    <meta name="description" content="告别DEVcpp 使用VScode+TDM-GCC搭建C&C++开发环境">
+    <meta name="keywords"  content="C/C++">
+    <!-- Open Graph -->
+    <meta property="og:title" content="告别DEVcpp 使用VScode+TDM-GCC搭建C&C++开发环境 - WIT电子爱好者协会">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://witeaa.cn/2018/10/05/%E4%BD%BF%E7%94%A8VScode+TDM-GCC%E6%90%AD%E5%BB%BAC&C++%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83.html">
+    <meta property="og:description" content="很高兴能在这里与你分享对技术的思考">
+    <meta property="og:site_name" content="WIT电子爱好者协会">
+    <link rel="stylesheet" href="//cdn.staticfile.org/normalize/6.0.0/normalize.min.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_roc50gemkxpw4s4i.css">
+    <link rel="stylesheet" href="/assets/css/github-markdown.css">
+    <link rel="stylesheet" href="/assets/css/prism.css">
+    <link rel="stylesheet" href="/assets/css/share.min.css">
+    <link rel="stylesheet" href="/assets/css/app.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+	
+	<!--
+Author: Ray-Eldath
+refer to:
+ - http://docs.mathjax.org/en/latest/options/index.html
+-->
+
+	<script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+	
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+		jax: ["input/TeX", "output/HTML-CSS"],
+		tex2jax: {
+			inlineMath: [ ["$", "$"] ],
+			displayMath: [ ["$$", "$$"] ],
+			skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+		},
+		"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+      });
+    </script>
+
+	
+    <!--
+Author: Ray-Eldath
+-->
+<style>
+    .markdown-body .anchor{
+        float: left;
+        margin-top: -8px;
+        margin-left: -20px;
+        padding-right: 4px;
+        line-height: 1;
+        opacity: 0;
+    }
+    
+    .markdown-body .anchor .anchor-icon{
+        font-size: 15px
+    }
+</style>
+<script>
+    $(document).ready(function() {
+        let nodes = document.querySelector(".markdown-body").querySelectorAll("h1,h2,h3")
+        for(let node of nodes) {
+            var anchor = document.createElement("a")
+            var anchorIcon = document.createElement("i")
+            anchorIcon.setAttribute("class", "fa fa-anchor fa-lg anchor-icon")
+            anchorIcon.setAttribute("aria-hidden", true)
+            anchor.setAttribute("class", "anchor")
+            anchor.setAttribute("href", "#" + node.getAttribute("id"))
+            
+            anchor.onmouseover = function() {
+                this.style.opacity = "0.4"
+            }
+            
+            anchor.onmouseout = function() {
+                this.style.opacity = "0"
+            }
+            
+            anchor.appendChild(anchorIcon)
+            node.appendChild(anchor)
+        }
+    })
+</script>
+</head>
+
+
+<body>
+  <!--[if lt IE 10]>
+<div class="alert-danger" role="alert">你的浏览器实在太太太旧了，放学别走，升级完浏览器再说！<a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a></div>
+<![endif]-->
+  <input id="nm-switch" type="hidden" value="true"> <header class="g-header">
+    <div class="g-logo">
+      <a href="/"></a>
+    </div>
+    <i id="menu-toggle" class="iconfont icon-menu"></i>
+    <nav class="g-nav">
+        <ul>
+            
+            <li><a href="/">home</a></li>
+            
+            <li><a href="/tags.html">tags</a></li>
+            
+            <li><a href="https://github.com/witeaa/Witeaa-Textbook/wiki">协会教材</a></li>
+            
+        </ul>
+    </nav>
+</header>
+
+
+  <header class="g-banner post-header post-pattern-circuitBoard bgcolor-default post-no-cover" data-theme="default">
+    <div class="post-wrapper">
+      <div class="post-tags">
+        
+          
+            <a href="https://witeaa.cn/tags#C/C++" class="post-tag">C/C++</a>
+          
+        
+      </div>
+      <h1>告别DEVcpp 使用VScode+TDM-GCC搭建C&C++开发环境</h1>
+      <div class="post-meta">
+        <span class="post-meta-item"><i class="iconfont icon-author"></i><a href="https://witeaa.cn" target="_blank" rel="author">WIT电子爱好者协会</a></></span>
+        <time class="post-meta-item" datetime="18-10-05"><i class="iconfont icon-date"></i>05 Oct 2018</time>
+      </div>
+    </div>
+    
+  </header>
+
+  <div class="post-content visible">
+    
+
+    <article class="markdown-body">
+      <p>使用VScode进行C语言编程练习比DevCpp、VC6.0这一类过时的东西好用多了，唯一的缺憾就是vscode没有编译功能，通过配置扩展和安装编译环境可以让vscode很方便的编译运行代码。</p>
+
+<h2 id="part-d9d3826bc78b17b7">首先下载好所需的所有文件</h2>
+
+<p>到官网下载vscode和TDM<br>
+<a href="https://code.visualstudio.com/download">vscode</a><br>
+<a href="https://sourceforge.net/projects/tdm-gcc/">TDM</a><br>
+如果无法从官网下载安装包，可以在下面的百度网盘地址下载<br>
+<a href="https://pan.baidu.com/s/1FmyDh1RMNg0Xme70YL7OIw">百度网盘</a></p>
+
+<p>VScode安装没什么好说的，主要演示TDM的安装</p>
+
+<p>选择create</p>
+
+<p><img src="https://i.loli.net/2018/10/05/5bb708ad4680b.png" alt="5bb708ad4680b"></p>
+
+<p><img src="https://i.loli.net/2018/10/05/5bb708dfb3198.png" alt="5bb708dfb3198"></p>
+
+<p>安装目录建议放在C盘的默认安装位置下</p>
+
+<p><img src="https://i.loli.net/2018/10/05/5bb70934e828a.png" alt="5bb70934e828a"></p>
+
+<p>保持默认点击安装</p>
+
+<p><img src="https://i.loli.net/2018/10/05/5bb709686571f.png" alt="5bb709686571f"></p>
+
+<p>安装完成后，在开始按钮右键打开Windows power shell，输入gcc -v 如果出现以下类似的信息，说明安装成功，如果提示没有找到命令，说明没有安装好</p>
+
+<p><img src="https://i.loli.net/2018/10/05/5bb70a430d78d.png" alt="5bb70a430d78d"></p>
+
+<h2 id="vscode">配置VScode</h2>
+
+<h3 id="part-38c76b54f590ec4a">首先需要安装几个插件</h3>
+
+<p>打开vscode，进入插件安装面板</p>
+
+<p><img src="https://i.loli.net/2018/10/05/5bb70ac1e2d00.png" alt="5bb70ac1e2d00"></p>
+
+<p>搜索下图中框住的插件并安装，这些插件可以提高写代码的效率</p>
+
+<p><img src="https://i.loli.net/2018/10/05/5bb70bfce17c1.png" alt="5bb70bfce17c1"></p>
+
+<p>将百度网盘中下载的压缩文件解压出来，将 .vscode 文件夹复制到你要编写代码的文件夹里</p>
+
+<p><img src="https://i.loli.net/2018/10/05/5bb70fdda345e.png" alt="5bb70fdda345e"></p>
+
+<p>比如新建了一个名为test的文件夹，我将在这个文件夹下编写代码</p>
+
+<p><img src="https://i.loli.net/2018/10/05/5bb7108b214f3.png" alt="5bb7108b214f3"></p>
+
+<p>在此文件夹下右键，用vscode打开</p>
+
+<p><img src="https://i.loli.net/2018/10/05/5bb710f229d1b.png" alt="5bb710f229d1b"></p>
+
+<p>我新建了一个文件 main.cpp 并添加了测试代码</p>
+
+<p><img src="https://i.loli.net/2018/10/05/5bb71354875ab.png" alt="5bb71354875ab"></p>
+
+<p>进入调试面板点击调试或者按F5</p>
+
+<p><img src="https://i.loli.net/2018/10/05/5bb713b3ab2d8.png" alt="5bb713b3ab2d8"></p>
+
+<p><img src="https://i.loli.net/2018/10/05/5bb713f59e534.png" alt="5bb713f59e534"></p>
+
+    </article>
+
+    
+    <div class="social-share-wrapper">
+      <div class="social-share"></div>
+    </div>
+    
+  </div>
+
+  <section class="author-detail">
+    <section class="post-footer-item author-card">
+      <div class="avatar">
+        <img src="https://witeaa-1252834524.file.myqcloud.com/images/logobig.png" alt="">
+      </div>
+      <div class="author-name" rel="author">WIT电子爱好者协会</div>
+      <div class="bio">
+        <p>电子爱好者，热爱技术&设计·简单乐观爱创造</p>
+      </div>
+      
+      <ul class="sns-links">
+        
+        <li>
+          <a href="//github.com/witeaa" target="_blank">
+                    <i class="iconfont icon-github"></i>
+                </a>
+        </li>
+        
+      </ul>
+      
+    </section>
+    <section class="post-footer-item read-next">
+      
+      <div class="read-next-item">
+        <a href="/2018/12/04/%E7%94%B5%E5%AD%90%E7%88%B1%E5%A5%BD%E8%80%85%E5%8D%8F%E4%BC%9A%E5%B0%8F%E5%88%B6%E4%BD%9C%E7%AB%9F%E8%B5%9B.html" class="read-next-link"></a>
+        <section>
+          <span>电子爱好者协会小制作竟赛</span>
+          <p>第一届电子爱好者协会小制作竟赛为提升本会会员科技创新能力，电子设计制作的水平和解决实际问题的能力，同时为协会今后的...</p>
+        </section>
+        
+        <div class="filter"></div>
+        <img src="https://bucket1-1252834524.picgz.myqcloud.com/upload/131884060023244235.jpg" alt="">
+        
+     </div>
+      
+
+      
+      <div class="read-next-item">
+        <a href="/2018/09/25/%E5%A6%82%E4%BD%95%E7%94%A8%E5%8D%95%E7%89%87%E6%9C%BA%E5%86%99%E4%B8%80%E4%B8%AA%E5%8F%AF%E4%BB%A5%E6%BB%9A%E5%8A%A8%E6%98%BE%E7%A4%BA%E7%9A%84%E6%95%B0%E7%A0%81%E7%AE%A1.html" class="read-next-link"></a>
+          <section>
+            <span>如何用单片机写一个可以滚动显示的数码管</span>
+            <p>要想让数码管显示更多的内容，一种方式是增加数码管的个数，但这样会带来成本的增加和体积的增大；另一种可行的方案是让数...</p>
+          </section>
+          
+      </div>
+      
+    </section>
+  </section>
+
+  <footer class="g-footer">
+  <section>WIT电子爱好者协会 ©
+  
+  
+    2018
+    -
+  
+  2019
+  </section>
+  <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1274266328'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1274266328%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+  <section><a href="http://www.miibeian.gov.cn/state/outPortal/loginPortal.action">晋ICP备19006083号</a></section>
+</footer>
+
+
+  <script src="/assets/js/social-share.min.js"></script>
+  <script>
+    socialShare('.social-share', {
+      sites: [
+        
+          'wechat'
+          ,
+          
+        
+          'github'
+          
+        
+      ],
+      wechatQrcodeTitle: "分享到微信朋友圈",
+      wechatQrcodeHelper: '<p>扫码后点击右上角</p><p>将本文分享至朋友圈</p>'
+    });
+  </script>
+
+  <script>
+    
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document,
+        s = d.createElement('script');
+      s.src = 'http://106.14.165.251:2018/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+
+      (d.head || d.body).appendChild(s);
+    })();
+    
+  </script>
+
+  <script src="/assets/js/prism.js"></script>
+  <script src="/assets/js/index.min.js"></script>
+</body>
+
+</html>
